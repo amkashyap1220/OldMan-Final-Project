@@ -1,49 +1,109 @@
-import java.util.*;
-import javax.swing.*;
-import java.awt.*;
-
 /**
  * Game runs through here
  * 
- * @author Alexander Kashyap, Maggie Sanborn  
+ * @author Alexander, Maggie, Justin
  * @version 1.0.0
  */
-public class game
+public class Game implements Runnable
 {
-    // page dimentions
-    private static final int PAGE_WIDTH = 1000;
-    private static final int PAGE_HEIGHT = 640;
+    /** description of instance variable x (add comment for each instance variable) */
+    private Display display;
+    public int width, height;
+    public String title;
     
-    // page title 
-    private static final String PAGE_TITLE = new String("Old Man With A Plan");
-    public static Scanner test = new Scanner(System.in);
-    // 
+    private boolean running = false;
+    private Thread thread;
+    
     /**
      * Default constructor for objects of class game
      */
-    public static void main(String[] args)throws InterruptedException
+    public Game(int width, int height, String title)
     {
-        // Create frame and set the afformentioned dimentions and title
-        JFrame frame = new JFrame();
-        frame.setSize(PAGE_WIDTH, PAGE_HEIGHT);
-        frame.setTitle(PAGE_TITLE);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        //Title
-        TitleComponent title = new TitleComponent();
-        frame.add(title);
+        this.title = title;
+        this.width = width;
+        this.height = height;
         
-        //Make frame visible
-        frame.setVisible(true); 
-        
-        // Animate the frame - Call nextFrame() from each component to animate
-        // Loop until each level is over
-        boolean cycle_title = true;
-        while(cycle_title) // repaint in nextFrame() method
-        {
-            Thread.sleep(100); 
-        }
+        //display = new Display(width, height, title);
+    }
+    /**
+     * Initializer of the thread (runs once on game start)
+     */
+    private void init()
+    {
+       display = new Display(width, height, title); 
+    }
+    
+    // BEGINING OF THE GAME LOOP & THREAD. RUNS UNTIL CLOSE AKA !running
+    /**
+     * 
+     */
+    private void update()
+    {
         
     }
-
-
+    
+    /**
+     * 
+     */
+    private void render()
+    {
+        
+    }
+    
+    /**
+     * 
+     */
+    public void run()
+    {
+        init();
+        
+        while(running) 
+        {
+            update();
+            render();
+        }
+        
+        stop();
+    }
+    // END OF GAME LOOP
+    
+    /**
+     * 
+     */
+    public synchronized void start()
+    {
+        if (running)
+        {
+            return;
+        }
+        else
+        {
+            running = true;
+            thread = new Thread(this);
+            thread.start();
+        }
+    }
+    
+    /**
+     * 
+     */
+    public synchronized void stop()
+    {
+        if (!running)
+        {
+            return;
+        }
+        else
+        {
+            running = false;
+            try
+            {
+                thread.join();
+            }
+            catch (InterruptedException e)
+            {
+                e.printStackTrace();
+            }
+        }
+    }
 }

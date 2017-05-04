@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=height\ width\ title
+comment0.target=Display(int,\ int,\ java.lang.String)
+comment0.text=\r\n\ Default\ constructor\ for\ objects\ of\ class\ display\r\n\ @param\ Height,\ Width,\ and\ Title\ of\ a\ display\r\n
+comment1.params=
+comment1.target=void\ createDisplay()
+comment1.text=\r\n\ Creates\ a\ display\ and\ sets\ visable\r\n
+numComments=2
