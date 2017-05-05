@@ -1,3 +1,5 @@
+import java.awt.image.*;
+import java.awt.*;
 /**
  * Game runs through here
  * 
@@ -14,6 +16,10 @@ public class Game implements Runnable
     private boolean running = false;
     private Thread thread;
     
+    private BufferStrategy bs;
+    private Graphics g;
+    
+    private BufferedImage testimage;
     /**
      * Default constructor for objects of class game
      */
@@ -31,9 +37,10 @@ public class Game implements Runnable
     private void init()
     {
        display = new Display(width, height, title); 
+       testimage = ImageLoader.loadImage("resources/images/titlescreen.png");
     }
     
-    // BEGINING OF THE GAME LOOP & THREAD. RUNS UNTIL CLOSE AKA !running
+    // game loop - running
     /**
      * 
      */
@@ -47,7 +54,20 @@ public class Game implements Runnable
      */
     private void render()
     {
-        
+        bs = display.getCanvas().getBufferStrategy();
+        if (bs == null)
+        {
+            display.getCanvas().createBufferStrategy(3);
+            return;
+        }
+        g = bs.getDrawGraphics();
+        //Clear Screen
+        g.clearRect(0,0,width,height);
+        //Draw Here
+        g.drawImage(testimage,0,0,null);
+        //End Drawing
+        bs.show();
+        g.dispose();
     }
     
     /**
@@ -65,7 +85,7 @@ public class Game implements Runnable
         
         stop();
     }
-    // END OF GAME LOOP
+    // end game loop - !running
     
     /**
      * 

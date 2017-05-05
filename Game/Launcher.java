@@ -8,7 +8,7 @@ import java.awt.*;
  * @author Alexander, Maggie, Justin
  * @version 1.0.0
  */
-public class Launcher
+public class Launcher 
 {
     // page dimentions
     private static final int PAGE_WIDTH = 1000;
@@ -20,7 +20,8 @@ public class Launcher
      */
     public static void main(String[] args)
     {
-        new Game(PAGE_HEIGHT,PAGE_WIDTH,PAGE_TITLE);
+        Game game = new Game(PAGE_HEIGHT,PAGE_WIDTH,PAGE_TITLE);
+        game.start();
     }
 
 
