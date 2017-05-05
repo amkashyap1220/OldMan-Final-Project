@@ -1,27 +1,29 @@
 import java.awt.image.*;
 import java.awt.*;
 /**
- * Game runs through here
+ * contains the game constructor and game loop
  * 
  * @author Alexander, Maggie, Justin
  * @version 1.0.0
  */
 public class Game implements Runnable
 {
-    /** description of instance variable x (add comment for each instance variable) */
+    // Display
     private Display display;
+    // width, height, and title of the page made in Launcher.java
     public int width, height;
     public String title;
-    
-    private boolean running = false;
+    // instance variables for the actual game thread
+    private boolean running = false; // keeps the game going
     private Thread thread;
-    
+    // Buffer Strategy is used to organize things on canvas before it appears on the frame
     private BufferStrategy bs;
+    // normal graphics object (like the pen or paper) draws everything
     private Graphics g;
-    
-    private BufferedImage testimage;
+    //private BufferedImage testimage;
     /**
      * Default constructor for objects of class game
+     * @params the width, height, and title of the window 
      */
     public Game(int width, int height, String title)
     {
@@ -37,9 +39,9 @@ public class Game implements Runnable
     private void init()
     {
        display = new Display(width, height, title); 
-       testimage = ImageLoader.loadImage("resources/images/titlescreen.png");
+       //testimage = ImageLoader.loadImage("resources/images/titlescreen.png");
+       Assets.init();
     }
-    
     // game loop - running
     /**
      * 
@@ -48,7 +50,6 @@ public class Game implements Runnable
     {
         
     }
-    
     /**
      * 
      */
@@ -57,36 +58,48 @@ public class Game implements Runnable
         bs = display.getCanvas().getBufferStrategy();
         if (bs == null)
         {
-            display.getCanvas().createBufferStrategy(3);
+            display.getCanvas().createBufferStrategy(2);
             return;
         }
         g = bs.getDrawGraphics();
         //Clear Screen
         g.clearRect(0,0,width,height);
+        
         //Draw Here
-        g.drawImage(testimage,0,0,null);
+        //g.drawImage(testimage,0,0,null);
+        g.drawImage(Assets.titlescreen,0,0,null);
+        
         //End Drawing
         bs.show();
         g.dispose();
     }
-    
     /**
      * 
      */
     public void run()
     {
         init();
-        
+        int fps = 60;
+        double timePerUpdate = 1000000000 / fps;
+        double delta = 0;
+        long now;
+        long lastTime = System.nanoTime(); 
         while(running) 
         {
-            update();
-            render();
+            now =System.nanoTime();
+            delta += (now - lastTime) / timePerUpdate;
+            lastTime = now;
+            if(delta >= 1){
+                update();
+                render();
+                delta--;
+            }
+            
         }
         
         stop();
     }
     // end game loop - !running
-    
     /**
      * 
      */
@@ -103,7 +116,6 @@ public class Game implements Runnable
             thread.start();
         }
     }
-    
     /**
      * 
      */

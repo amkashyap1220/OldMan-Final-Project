@@ -2,15 +2,16 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 /**
- * Write a description of class ImageLoader here.
- *
- * @author (your name)
- * @version (a version number or a date)
+ * Image Loader class loads in images from resources folder
+ * 
+ * @author Alexander, Maggie, and Justin
+ * @version 1.0.0
  */
 public class ImageLoader
 {
     public static BufferedImage loadImage(String path)
     {
+        //Try to get the image and if 
         try
         {
             return ImageIO.read(ImageLoader.class.getResource(path));

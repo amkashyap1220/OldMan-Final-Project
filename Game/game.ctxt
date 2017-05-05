@@ -1,9 +1,9 @@
 #BlueJ class context
 comment0.target=Game
-comment0.text=\n\ Game\ runs\ through\ here\n\ \n\ @author\ Alexander,\ Maggie,\ Justin\n\ @version\ 1.0.0\n
+comment0.text=\n\ contains\ the\ game\ constructor\ and\ game\ loop\n\ \n\ @author\ Alexander,\ Maggie,\ Justin\n\ @version\ 1.0.0\n
 comment1.params=width\ height\ title
 comment1.target=Game(int,\ int,\ java.lang.String)
-comment1.text=\n\ Default\ constructor\ for\ objects\ of\ class\ game\n
+comment1.text=\n\ Default\ constructor\ for\ objects\ of\ class\ game\n\ @params\ the\ width,\ height,\ and\ title\ of\ the\ window\ \n
 comment2.params=
 comment2.target=void\ init()
 comment2.text=\n\ Initializer\ of\ the\ thread\ (runs\ once\ on\ game\ start)\n

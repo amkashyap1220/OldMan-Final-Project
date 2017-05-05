@@ -1,22 +1,17 @@
 import javax.swing.JFrame;
 import java.awt.*;
-
 /**
  * Write a description of class display here.
  * 
- * @author Alexander, Maggie, Justin
+ * @author Alexander, Maggie, and Justin
  * @version 1.0.0
  */
 public class Display
 {
-    /**  
-     * Height = height of the display
-     * title = title of the display
-     * frame = the frame for the display (JFrame)
-     */
+    // width, height, and title of the page made in Launcher.java
     private int width, height;
     private String title;
-    
+    // frame (widow) the game runs through and the canvas to be drawn on
     private JFrame frame;
     private Canvas canvas;
     /**
@@ -31,30 +26,31 @@ public class Display
         
         createDisplay();
     }
-
     /**
      * Creates a display and sets visable
      */
     private void createDisplay()
     {
+        // Creates frame based off of the parameters passed in Display constructor
         frame = new JFrame(title); 
         frame.setSize(width, height);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setResizable(false); 
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
-        
+        // Creates the canvas that is drawn on
         canvas = new Canvas();
         canvas.setPreferredSize(new Dimension(width,height));
         canvas.setMaximumSize(new Dimension(width,height));
         canvas.setMinimumSize(new Dimension(width,height));
-        
+        //add the canvas to the window
         frame.add(canvas);
+        //pack the window (kinda like sealing it off)
         frame.pack();
     }
-    
     /**
-     * 
+     * The get method for the canvas
+     * @return the canvas
      */
     public Canvas getCanvas()
     {

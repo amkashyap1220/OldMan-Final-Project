@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Display
-comment0.text=\n\ Write\ a\ description\ of\ class\ display\ here.\n\ \n\ @author\ Alexander,\ Maggie,\ Justin\n\ @version\ 1.0.0\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ display\ here.\n\ \n\ @author\ Alexander,\ Maggie,\ and\ Justin\n\ @version\ 1.0.0\n
 comment1.params=height\ width\ title
 comment1.target=Display(int,\ int,\ java.lang.String)
 comment1.text=\n\ Default\ constructor\ for\ objects\ of\ class\ display\n\ @param\ Height,\ Width,\ and\ Title\ of\ a\ display\n
@@ -9,5 +9,5 @@ comment2.target=void\ createDisplay()
 comment2.text=\n\ Creates\ a\ display\ and\ sets\ visable\n
 comment3.params=
 comment3.target=java.awt.Canvas\ getCanvas()
-comment3.text=\n\ \n
+comment3.text=\n\ The\ get\ method\ for\ the\ canvas\n\ @return\ the\ canvas\n
 numComments=4

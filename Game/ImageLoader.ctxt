@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=ImageLoader
-comment0.text=\n\ Write\ a\ description\ of\ class\ ImageLoader\ here.\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\n\ Image\ Loader\ class\ loads\ in\ images\ from\ resources\ folder\n\ \n\ @author\ Alexander,\ Maggie,\ and\ Justin\n\ @version\ 1.0.0\n
 comment1.params=path
 comment1.target=java.awt.image.BufferedImage\ loadImage(java.lang.String)
 numComments=2
