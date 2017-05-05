@@ -94,9 +94,7 @@ public class game implements Runnable
                 render();
                 delta--;
             }
-            
         }
-        
         stop();
     }
     // end game loop - !running
