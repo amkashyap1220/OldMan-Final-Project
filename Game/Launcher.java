@@ -20,10 +20,10 @@ public class Launcher
     public static void main(String[] args)
     {
         //Create an instance of the game
-        Game game = new Game(PAGE_HEIGHT,PAGE_WIDTH,PAGE_TITLE);
+        game Game = new game(PAGE_HEIGHT,PAGE_WIDTH,PAGE_TITLE);
         
         //Start the game loop
-        game.start();
+        Game.start();
     }
 
 

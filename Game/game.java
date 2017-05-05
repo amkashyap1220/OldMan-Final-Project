@@ -6,7 +6,7 @@ import java.awt.*;
  * @author Alexander, Maggie, Justin
  * @version 1.0.0
  */
-public class Game implements Runnable
+public class game implements Runnable
 {
     // Display
     private Display display;
@@ -25,7 +25,7 @@ public class Game implements Runnable
      * Default constructor for objects of class game
      * @params the width, height, and title of the window 
      */
-    public Game(int width, int height, String title)
+    public game(int width, int height, String title)
     {
         this.title = title;
         this.width = width;
