@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=state
+comment0.target=void\ setState(State)
+comment1.params=
+comment1.target=State\ getState()
+comment2.params=
+comment2.target=void\ update()
+comment3.params=g
+comment3.target=void\ render(java.awt.Graphics)
+numComments=4

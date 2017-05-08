@@ -1,0 +1,22 @@
+import java.awt.*;
+
+/**
+ * Write a description of class State here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+public abstract class State
+{
+    private static State currentstate = null;
+    
+    public static void setState(State state){
+        currentstate = state;
+    }
+    public static State getState(){
+        return currentstate;
+    }
+    
+    public abstract void update();
+    public abstract void render(Graphics g);
+}

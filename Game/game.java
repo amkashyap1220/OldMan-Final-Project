@@ -21,6 +21,9 @@ public class game implements Runnable
     // normal graphics object (like the pen or paper) draws everything
     private Graphics g;
     //private BufferedImage testimage;
+    
+    private State gamestate;
+    private State menustate;
     /**
      * Default constructor for objects of class game
      * @params the width, height, and title of the window 
@@ -41,6 +44,11 @@ public class game implements Runnable
        display = new Display(width, height, title); 
        //testimage = ImageLoader.loadImage("resources/images/titlescreen.png");
        Assets.init();
+       gamestate = new GameState();
+       menustate = new MenuState();
+       
+       //temp
+       State.setState(menustate);
     }
     // game loop - running
     /**
@@ -48,7 +56,10 @@ public class game implements Runnable
      */
     private void update()
     {
-        
+        if(State.getState() != null)
+        {
+            State.getState().update();
+        }
     }
     /**
      * 
@@ -64,10 +75,13 @@ public class game implements Runnable
         g = bs.getDrawGraphics();
         //Clear Screen
         g.clearRect(0,0,width,height);
-        
         //Draw Here
-        //g.drawImage(testimage,0,0,null);
-        g.drawImage(Assets.titlescreen,0,0,null);
+        if(State.getState() != null)
+        {
+            State.getState().render(g);
+        }
+        
+        
         
         //End Drawing
         bs.show();
