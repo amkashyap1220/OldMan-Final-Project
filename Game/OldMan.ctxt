@@ -1,8 +1,8 @@
 #BlueJ class context
-comment0.params=game
-comment0.target=GameState(game)
+comment0.params=x\ y
+comment0.target=OldMan(float,\ float)
 comment1.params=
-comment1.target=void\ update()
+comment1.target=void\ tick()
 comment2.params=g
 comment2.target=void\ render(java.awt.Graphics)
 numComments=3

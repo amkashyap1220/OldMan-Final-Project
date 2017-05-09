@@ -9,6 +9,11 @@ import java.awt.*;
 public abstract class State
 {
     private static State currentstate = null;
+    protected game game;
+    
+    public State(game game){
+        this.game = game;
+    }
     
     public static void setState(State state){
         currentstate = state;

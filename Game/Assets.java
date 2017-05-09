@@ -9,11 +9,13 @@ public class Assets
 {
     //Add all assets here
     public static BufferedImage titlescreen;
+    public static BufferedImage player;
     /**
      * Loads all of the images (called by the init() in game)
      */
     public static void init()
     {
         titlescreen = ImageLoader.loadImage("resources/images/titlescreen.png");
+        player = ImageLoader.loadImage("resources/images/dalelewis.png");
     }
 }

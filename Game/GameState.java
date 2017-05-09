@@ -9,18 +9,18 @@ import java.awt.*;
 public class GameState extends State
 {
 
-    /**
-     * Default constructor for objects of class GameState
-     */
-    public GameState()
+    private OldMan player;
+    public GameState(game game)
     {
-       
+       super(game);
+       player = new OldMan(100,100);
     }
+    
     public void update(){
-        
+        player.tick();
     }
     public void render(Graphics g){
-        
+        player.render(g);
     }
 
 }

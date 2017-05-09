@@ -44,11 +44,11 @@ public class game implements Runnable
        display = new Display(width, height, title); 
        //testimage = ImageLoader.loadImage("resources/images/titlescreen.png");
        Assets.init();
-       gamestate = new GameState();
-       menustate = new MenuState();
+       gamestate = new GameState(this);
+       menustate = new MenuState(this);
        
        //temp
-       State.setState(menustate);
+       State.setState(gamestate);
     }
     // game loop - running
     /**

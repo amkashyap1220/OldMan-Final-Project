@@ -12,9 +12,9 @@ public class MenuState extends State implements KeyListener
     /**
      * Default constructor for objects of class MenuState
      */
-    public MenuState()
+    public MenuState(game game)
     {
-        
+        super(game);
     }
     public void update(){
         
