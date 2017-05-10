@@ -75,12 +75,12 @@ public class game implements Runnable
         bs = display.getCanvas().getBufferStrategy();
         if (bs == null)
         {
-            display.getCanvas().createBufferStrategy(2);
+            display.getCanvas().createBufferStrategy(3);
             return;
         }
         g = bs.getDrawGraphics();
         //Clear Screen
-        g.clearRect(0,0,width,height);
+        g.clearRect(0,0,width+1000,height+1000);
         //Draw Here
         if(State.getState() != null)
         {
@@ -99,7 +99,7 @@ public class game implements Runnable
     public void run()
     {
         init();
-        int fps = 60;
+        int fps = Integer.MAX_VALUE;
         double timePerUpdate = 1000000000 / fps;
         double delta = 0;
         long now;
