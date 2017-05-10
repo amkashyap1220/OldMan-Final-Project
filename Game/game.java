@@ -24,6 +24,8 @@ public class game implements Runnable
     
     private State gamestate;
     private State menustate;
+    
+    private KeyManager keyManager;
     /**
      * Default constructor for objects of class game
      * @params the width, height, and title of the window 
@@ -33,6 +35,7 @@ public class game implements Runnable
         this.title = title;
         this.width = width;
         this.height = height;
+        keyManager = new KeyManager();
         
         //display = new Display(width, height, title);
     }
@@ -42,6 +45,7 @@ public class game implements Runnable
     private void init()
     {
        display = new Display(width, height, title); 
+       display.getFrame().addKeyListener(keyManager);
        //testimage = ImageLoader.loadImage("resources/images/titlescreen.png");
        Assets.init();
        gamestate = new GameState(this);
@@ -56,6 +60,8 @@ public class game implements Runnable
      */
     private void update()
     {
+        keyManager.tick();
+        
         if(State.getState() != null)
         {
             State.getState().update();
@@ -110,6 +116,11 @@ public class game implements Runnable
             }
         }
         stop();
+    }
+    
+    public KeyManager getKeyManager()
+    {
+        return keyManager;
     }
     // end game loop - !running
     /**

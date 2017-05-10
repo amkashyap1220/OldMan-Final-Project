@@ -8,4 +8,6 @@ comment1.text=\r\n\ Creates\ a\ display\ and\ sets\ visable\r\n
 comment2.params=
 comment2.target=java.awt.Canvas\ getCanvas()
 comment2.text=\r\n\ The\ get\ method\ for\ the\ canvas\r\n\ @return\ the\ canvas\r\n
-numComments=3
+comment3.params=
+comment3.target=javax.swing.JFrame\ getFrame()
+numComments=4

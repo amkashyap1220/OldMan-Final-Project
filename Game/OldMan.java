@@ -8,12 +8,21 @@ import java.awt.*;
  */
 public class OldMan extends Creature
 {
-    public OldMan(float x, float y){
+    private game game;
+    public OldMan(float x, float y, game game){
         super(x,y);
+        this.game = game;
     }
     
     public void tick(){
-        
+        if(game.getKeyManager().up)
+           y-=3;
+        if(game.getKeyManager().down)
+           y+=3;
+        if(game.getKeyManager().left)
+           x-=3;
+        if(game.getKeyManager().right)
+           x+=3;
     }
     
     public void render( Graphics g){
