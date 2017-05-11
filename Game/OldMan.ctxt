@@ -2,7 +2,9 @@
 comment0.params=x\ y\ game
 comment0.target=OldMan(float,\ float,\ game)
 comment1.params=
-comment1.target=void\ tick()
-comment2.params=g
-comment2.target=void\ render(java.awt.Graphics)
-numComments=3
+comment1.target=void\ getInput()
+comment2.params=
+comment2.target=void\ tick()
+comment3.params=g
+comment3.target=void\ render(java.awt.Graphics)
+numComments=4

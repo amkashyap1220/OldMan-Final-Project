@@ -10,22 +10,31 @@ public class OldMan extends Creature
 {
     private game game;
     public OldMan(float x, float y, game game){
-        super(x,y, Creature.DEFAULT_CREATURE_WIDTH, Creature.DEFAULT_CREATURE_HEIGHT);
+        super(x,y, 100, 150);
         this.game = game;
     }
     
+    private void getInput()
+    {
+        xMove = 0;
+        yMove = 0;
+        
+        if (game.getKeyManager().up)
+           yMove = -speed;
+        if (game.getKeyManager().down)
+           yMove = speed;
+        if (game.getKeyManager().left)
+           xMove = -speed;
+        if (game.getKeyManager().right)
+           xMove = speed;
+    }
+    
     public void tick(){
-        if(game.getKeyManager().up)
-           y-=3;
-        if(game.getKeyManager().down)
-           y+=3;
-        if(game.getKeyManager().left)
-           x-=3;
-        if(game.getKeyManager().right)
-           x+=3;
+        getInput();
+        move();
     }
     
     public void render( Graphics g){
-        g.drawImage(Assets.idle1, (int) x, (int) y, null);
+        g.drawImage(Assets.idle1, (int) x, (int) y, width, height, null);
     }
 }
