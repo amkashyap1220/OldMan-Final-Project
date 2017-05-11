@@ -26,6 +26,6 @@ public class OldMan extends Creature
     }
     
     public void render( Graphics g){
-        g.drawImage(Assets.player, (int) x, (int) y, null);
+        g.drawImage(Assets.idle1, (int) x, (int) y, null);
     }
 }

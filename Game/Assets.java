@@ -8,8 +8,10 @@ import java.awt.image.*;
 public class Assets
 {
     //Add all assets here
-    public static BufferedImage titlescreen;
-    public static BufferedImage player;
+    public static BufferedImage titlescreen,
+    player,
+    idle1,
+    idle2;
     /**
      * Loads all of the images (called by the init() in game)
      */
@@ -17,5 +19,7 @@ public class Assets
     {
         titlescreen = ImageLoader.loadImage("resources/images/titlescreen.png");
         player = ImageLoader.loadImage("resources/images/dalelewis.png");
+        idle1 = ImageLoader.loadImage("resources/images/idleanim1.png");
+        idle2 = ImageLoader.loadImage("resources/images/idleanim2.png");
     }
 }
