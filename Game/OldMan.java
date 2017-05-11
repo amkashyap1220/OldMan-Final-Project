@@ -10,7 +10,7 @@ public class OldMan extends Creature
 {
     private game game;
     public OldMan(float x, float y, game game){
-        super(x,y);
+        super(x,y, Creature.DEFAULT_CREATURE_WIDTH, Creature.DEFAULT_CREATURE_HEIGHT);
         this.game = game;
     }
     

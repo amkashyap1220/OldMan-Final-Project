@@ -1,4 +1,12 @@
 #BlueJ class context
-comment0.params=x\ y
-comment0.target=Creature(float,\ float)
-numComments=1
+comment0.params=x\ y\ width\ height
+comment0.target=Creature(float,\ float,\ int,\ int)
+comment1.params=
+comment1.target=int\ getHealth()
+comment2.params=health
+comment2.target=void\ setHealth(int)
+comment3.params=
+comment3.target=float\ getSpeed()
+comment4.params=speed
+comment4.target=void\ setSpeed(float)
+numComments=5

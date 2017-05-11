@@ -99,7 +99,7 @@ public class game implements Runnable
     public void run()
     {
         init();
-        int fps = Integer.MAX_VALUE;
+        int fps = 60;
         double timePerUpdate = 1000000000 / fps;
         double delta = 0;
         long now;
