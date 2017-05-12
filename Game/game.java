@@ -1,5 +1,5 @@
-import java.awt.image.*;
 import java.awt.*;
+import java.awt.image.*;
 /**
  * contains the game constructor and game loop
  * 
