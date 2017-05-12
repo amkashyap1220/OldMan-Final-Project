@@ -46,7 +46,7 @@ public class game implements Runnable
     {
        display = new Display(width, height, title); 
        display.getFrame().addKeyListener(keyManager);
-       //testimage = ImageLoader.loadImage("resources/images/titlescreen.png");
+       //testimage = ImageLoader.loadImage("resources/images/therealtitlescreen.png");
        Assets.init();
        gamestate = new GameState(this);
        menustate = new MenuState(this);
