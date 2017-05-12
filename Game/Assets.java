@@ -17,7 +17,7 @@ public class Assets
      */
     public static void init()
     {
-        titlescreen = ImageLoader.loadImage("resources/images/titlescreen.png");
+        titlescreen = ImageLoader.loadImage("resources/images/therealtitlescreen.png");
         player = ImageLoader.loadImage("resources/images/dalelewis.png");
         idle1 = ImageLoader.loadImage("resources/images/idleanim1.png");
         idle2 = ImageLoader.loadImage("resources/images/idleanim2.png");

@@ -52,7 +52,7 @@ public class game implements Runnable
        menustate = new MenuState(this);
        
        //temp
-       State.setState(gamestate);
+       State.setState(menustate);
     }
     // game loop - running
     /**
