@@ -6,7 +6,7 @@ import java.awt.event.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class MenuState extends State implements KeyListener
+public class MenuState extends State //implements KeyListener
 {
  
     /**

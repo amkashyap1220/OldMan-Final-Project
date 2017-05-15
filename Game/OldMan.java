@@ -10,7 +10,7 @@ public class OldMan extends Creature
 {
     private game game;
     public OldMan(float x, float y, game game){
-        super(x,y, 100, 150);
+        super(x,y, 167, 250);
         this.game = game;
     }
     
@@ -42,10 +42,10 @@ public class OldMan extends Creature
             x = 900;
         }
         
-        if(y<358){
-            y=358;
-        }else if (y>500){
-            y = 500;
+        if(y<318){
+            y=318;
+        }else if (y>450){
+            y = 450;
         }
         g.drawImage(Assets.idle1, (int) x, (int) y, width, height, null);
     }
