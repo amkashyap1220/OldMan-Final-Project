@@ -27,6 +27,7 @@ public class OldMan extends Creature
            xMove = -speed;
         if (game.getKeyManager().right)
            xMove = speed;
+        
     }
     
     public void tick(){
@@ -41,10 +42,10 @@ public class OldMan extends Creature
             x = 900;
         }
         
-        if(y<0){
-            y=0;
-        }else if (y>308){
-            y = 308;
+        if(y<358){
+            y=358;
+        }else if (y>500){
+            y = 500;
         }
         g.drawImage(Assets.idle1, (int) x, (int) y, width, height, null);
     }
