@@ -9,7 +9,7 @@ import java.awt.event.*;
 public class KeyManager implements KeyListener
 {
     private boolean[] keys;
-    public boolean up, down, left, right, enter;
+    public boolean up, down, left, right, enter, punch, kick, boy, can;
     public KeyManager(){
         keys = new boolean[256];
     }
@@ -19,6 +19,10 @@ public class KeyManager implements KeyListener
         left = keys[KeyEvent.VK_A];
         right = keys[KeyEvent.VK_D];
         enter = keys[KeyEvent.VK_ENTER];
+        punch = keys[KeyEvent.VK_J];
+        kick = keys[KeyEvent.VK_K];
+        boy = keys[KeyEvent.VK_L];
+        can = keys[KeyEvent.VK_H];
     }
     @Override
     public void keyPressed(KeyEvent e){

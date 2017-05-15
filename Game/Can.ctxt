@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=x\ y\ width\ height
+comment0.target=Can(float,\ float,\ int,\ int)
+comment0.text=\r\n\ Default\ constructor\ for\ objects\ of\ class\ Can\r\n
+comment1.params=
+comment1.target=void\ tick()
+comment2.params=g
+comment2.target=void\ render(java.awt.Graphics)
+comment3.params=
+comment3.target=void\ move()
+numComments=4
