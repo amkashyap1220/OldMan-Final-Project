@@ -52,6 +52,7 @@ public class game implements Runnable
        menustate = new MenuState(this);
        
        //temp
+       
        State.setState(menustate);
     }
     // game loop - running
@@ -92,6 +93,10 @@ public class game implements Runnable
         //End Drawing
         bs.show();
         g.dispose();
+        if(keyManager.enter && State.getState() == menustate)
+        {
+            State.setState(gamestate);
+        }
     }
     /**
      * 
