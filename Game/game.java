@@ -21,9 +21,8 @@ public class game implements Runnable
     // normal graphics object (like the pen or paper) draws everything
     private Graphics g;
     //private BufferedImage testimage;
-    
-    private State gamestate;
-    private State menustate;
+    public int timeforswap = 0;
+    private State gamestate, menustate, instructionsstate;
     
     private KeyManager keyManager;
     /**
@@ -50,6 +49,7 @@ public class game implements Runnable
        Assets.init();
        gamestate = new GameState(this);
        menustate = new MenuState(this);
+       instructionsstate = new InstructState(this);
        
        //temp
        
@@ -93,10 +93,14 @@ public class game implements Runnable
         //End Drawing
         bs.show();
         g.dispose();
+        //swap through states
         if(keyManager.enter && State.getState() == menustate)
         {
+            State.setState(instructionsstate);
+        }else if(keyManager.enter && State.getState() == instructionsstate && timeforswap >=200){
             State.setState(gamestate);
         }
+        timeforswap+=1;
     }
     /**
      * 

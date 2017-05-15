@@ -6,13 +6,13 @@ import java.awt.event.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class MenuState extends State implements KeyListener
+public class InstructState extends State //implements KeyListener
 {
  
     /**
      * Default constructor for objects of class MenuState
      */
-    public MenuState(game game)
+    public InstructState(game game)
     {
         super(game);
     }
@@ -20,7 +20,7 @@ public class MenuState extends State implements KeyListener
         
     }
     public void render(Graphics g){
-        g.drawImage(Assets.titlescreen,0,0,null);
+        g.drawImage(Assets.instructions,0,0,null);
     }
    
 }
