@@ -20,6 +20,7 @@ public class GameState extends State
         player.tick();
     }
     public void render(Graphics g){
+        g.drawImage(Assets.lvl1bg,0,0,null);
         player.render(g);
     }
 

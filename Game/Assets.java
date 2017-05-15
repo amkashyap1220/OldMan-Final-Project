@@ -11,7 +11,8 @@ public class Assets
     public static BufferedImage titlescreen,
     player,
     idle1,
-    idle2;
+    idle2,
+    lvl1bg;
     /**
      * Loads all of the images (called by the init() in game)
      */
@@ -21,5 +22,6 @@ public class Assets
         player = ImageLoader.loadImage("resources/images/dalelewis.png");
         idle1 = ImageLoader.loadImage("resources/images/idleanim1.png");
         idle2 = ImageLoader.loadImage("resources/images/idleanim2.png");
+        lvl1bg = ImageLoader.loadImage("resources/images/lvl1bg.png");
     }
 }
