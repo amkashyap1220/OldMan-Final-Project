@@ -9,6 +9,7 @@ import java.awt.*;
 public class OldMan extends Creature
 {
     private game game;
+    public int count = 0;
     public OldMan(float x, float y, game game){
         super(x,y, 167, 250);
         this.game = game;
@@ -47,6 +48,14 @@ public class OldMan extends Creature
         }else if (y>450){
             y = 450;
         }
-        g.drawImage(Assets.idle1, (int) x, (int) y, width, height, null);
+        if (count <40){
+            g.drawImage(Assets.idle1, (int) x, (int) y, width, height, null);
+        }else{
+            if(count == 100){
+                count = 0;
+            }
+            g.drawImage(Assets.idle2, (int) x, (int) y, width, height, null);
+        }
+        count++;
     }
 }
