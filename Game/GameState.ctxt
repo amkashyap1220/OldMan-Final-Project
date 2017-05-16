@@ -1,10 +1,8 @@
 #BlueJ class context
-comment0.target=GameState
-comment0.text=\n\ Write\ a\ description\ of\ class\ GameState\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
-comment1.params=game
-comment1.target=GameState(game)
-comment2.params=
-comment2.target=void\ update()
-comment3.params=g
-comment3.target=void\ render(java.awt.Graphics)
-numComments=4
+comment0.params=game
+comment0.target=GameState(game)
+comment1.params=
+comment1.target=void\ update()
+comment2.params=g
+comment2.target=void\ render(java.awt.Graphics)
+numComments=3
