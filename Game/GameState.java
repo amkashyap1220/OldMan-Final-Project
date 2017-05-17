@@ -10,18 +10,22 @@ public class GameState extends State
 {
 
     private OldMan player;
+    private Slime slime;
     public GameState(game game)
     {
        super(game);
        player = new OldMan(100,408, game);
+       slime = new Slime(850, 508, game);
     }
     
     public void update(){
         player.tick();
+        slime.tick();
     }
     public void render(Graphics g){
         g.drawImage(Assets.lvl1bg,0,0,null);
         player.render(g);
+        slime.render(g);
     }
 
 }
