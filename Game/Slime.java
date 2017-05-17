@@ -11,10 +11,14 @@ public class Slime extends Creature
     private game game;
     public int count = 0;
     private boolean wall = false;
+    private int hitboxX, hitboxXFar, hitboxY, hitboxYFar;
     public Slime(float x, float y, game game){
         super(x,y, 100, 75);
         this.game = game;
         xMove = -3;
+        hitboxX = (int) x; hitboxY = (int) y;
+        hitboxXFar = hitboxX + 100;
+        hitboxYFar = hitboxY + 75;
     }
    
     
@@ -37,5 +41,6 @@ public class Slime extends Creature
         }
         count++;
     }
+    
 
 }
