@@ -10,9 +10,12 @@ public class OldMan extends Creature
 {
     private game game;
     public int count = 0;
+    public int hitboxX, hitboxXFar, hitboxY, hitboxYFar;
+    Rectangle hitbox;
     public OldMan(float x, float y, game game){
         super(x,y, 167, 250);
         this.game = game;
+        hitbox = new Rectangle((int)x, (int)y, (int)x + 167, (int)y + 250);
     }
     
     private void getInput()
@@ -32,6 +35,7 @@ public class OldMan extends Creature
     }
     
     public void tick(){
+        hitbox = new Rectangle((int)x, (int)y, (int)x + 167, (int)y + 250);
         getInput();
         move();
     }
@@ -57,5 +61,13 @@ public class OldMan extends Creature
             g.drawImage(Assets.idle2, (int) x, (int) y, width, height, null);
         }
         count++;
+        g.drawRect((int)x, (int)y, (int)x + 167, (int)y + 250);
     }
+    
+    public void hit()
+    {
+        x = x - 50;
+        setHealth(health - 1);
+    }
+    
 }

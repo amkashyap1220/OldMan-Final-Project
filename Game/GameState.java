@@ -19,6 +19,8 @@ public class GameState extends State
     }
     
     public void update(){
+        if(player.hitbox.intersects(slime.hitbox))
+            player.hit();
         player.tick();
         slime.tick();
     }

@@ -7,4 +7,6 @@ comment2.params=
 comment2.target=void\ tick()
 comment3.params=g
 comment3.target=void\ render(java.awt.Graphics)
-numComments=4
+comment4.params=
+comment4.target=void\ hit()
+numComments=5
