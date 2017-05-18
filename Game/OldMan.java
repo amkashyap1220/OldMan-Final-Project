@@ -12,6 +12,7 @@ public class OldMan extends Creature
     public int count = 0;
     public int hitboxX, hitboxXFar, hitboxY, hitboxYFar;
     Rectangle hitbox;
+    boolean left = false;
     public OldMan(float x, float y, game game){
         super(x,y, 167, 250);
         this.game = game;
@@ -28,9 +29,16 @@ public class OldMan extends Creature
         if (game.getKeyManager().down)
            yMove = speed;
         if (game.getKeyManager().left)
+        {
            xMove = -speed;
+           left = true;
+        }
         if (game.getKeyManager().right)
+        {
            xMove = speed;
+           left = false;
+        }
+           
         
     }
     
@@ -52,9 +60,21 @@ public class OldMan extends Creature
         }else if (y>450){
             y = 450;
         }
-        if (count <40){
+        if (count <40 && left){
             g.drawImage(Assets.idle1, (int) x, (int) y, width, height, null);
-        }else{
+        }
+        else if (count <40 && !left)
+        {
+            g.drawImage(Assets.flipidle1, (int) x, (int) y, width, height, null);
+        }
+        else if (!left)
+        {
+            if(count == 100){
+                count = 0;
+            }
+             g.drawImage(Assets.flipidle2, (int) x, (int) y, width, height, null);
+        }
+        else{
             if(count == 100){
                 count = 0;
             }
@@ -70,4 +90,5 @@ public class OldMan extends Creature
         setHealth(health - 1);
     }
     
+   
 }

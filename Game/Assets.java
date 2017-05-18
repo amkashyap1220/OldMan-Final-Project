@@ -14,7 +14,8 @@ public class Assets
     idle2,
     lvl1bg,
     instructions,
-    slime1, slime2;
+    slime1, slime2,
+    flipidle1, flipidle2;
     /**
      * Loads all of the images (called by the init() in game)
      */
@@ -24,6 +25,8 @@ public class Assets
         player = ImageLoader.loadImage("resources/images/dalelewis.png");
         idle1 = ImageLoader.loadImage("resources/images/idleanim1.png");
         idle2 = ImageLoader.loadImage("resources/images/idleanim2.png");
+        flipidle1 = ImageLoader.loadImage("resources/images/idleanimflip1.png");
+        flipidle2 = ImageLoader.loadImage("resources/images/idleanimflip2.png");
         lvl1bg = ImageLoader.loadImage("resources/images/lvl1bg.png");
         instructions = ImageLoader.loadImage("resources/images/instruct.png");
         slime1 = ImageLoader.loadImage("resources/images/slime1.png");
