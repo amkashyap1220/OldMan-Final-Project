@@ -17,12 +17,12 @@ public class Slime extends Creature
         super(x,y, 100, 75);
         this.game = game;
         xMove = -3;
-        hitbox = new Rectangle((int)x, (int)y, (int)x + 100, (int)y + 75);
+        hitbox = new Rectangle((int)x, (int)y, 75, 75);
     }
    
     
     public void tick(){
-        hitbox = updateHitbox((int)x, (int)y, (int)x + 100, (int)y + 75);
+        hitbox = updateHitbox((int)x+10, (int)y+10, 75, 75);
         if (x == 1)
            xMove = 3;
         if (x == 1000)
@@ -40,6 +40,7 @@ public class Slime extends Creature
             g.drawImage(Assets.slime2, (int) x, (int) y, width, height, null);
         }
         count++;
+        g.drawRect((int)x+10, (int)y+10, 75,  75);
     }
     
     public void createHitbox(int hitboxX, int hitboxXFar, int hitboxY, int hitboxYFar)

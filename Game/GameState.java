@@ -15,7 +15,7 @@ public class GameState extends State
     {
        super(game);
        player = new OldMan(100,408, game);
-       slime = new Slime(850, 508, game);
+       slime = new Slime(850, 550, game);
     }
     
     public void update(){

@@ -43,7 +43,7 @@ public class OldMan extends Creature
     }
     
     public void tick(){
-        hitbox = new Rectangle((int)x, (int)y, (int)x + 167, (int)y + 250);
+        hitbox = new Rectangle((int)x, (int)y+40,167,170);
         getInput();
         move();
     }
@@ -81,7 +81,7 @@ public class OldMan extends Creature
             g.drawImage(Assets.idle2, (int) x, (int) y, width, height, null);
         }
         count++;
-        g.drawRect((int)x, (int)y, (int)x + 167, (int)y + 250);
+        g.drawRect((int)x, (int)y+40, 167,  170);
     }
     
     public void hit()
