@@ -16,7 +16,7 @@ public class OldMan extends Creature
     public OldMan(float x, float y, game game){
         super(x,y, 167, 250);
         this.game = game;
-        hitbox = new Rectangle((int)x, (int)y, (int)x + 167, (int)y + 250);
+        hitbox = new Rectangle((int)x, (int)y+40,167,170);
     }
     
     private void getInput()
@@ -38,6 +38,8 @@ public class OldMan extends Creature
            xMove = speed;
            left = false;
         }
+        if (game.getKeyManager().punch)
+           Punch punch = new Punch(hitbox);
            
         
     }
