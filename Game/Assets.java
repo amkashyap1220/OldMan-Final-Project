@@ -8,14 +8,17 @@ import java.awt.image.*;
 public class Assets
 {
     //Add all assets here
-    public static BufferedImage titlescreen,
+    public static BufferedImage 
+    titlescreen,
     player,
     idle1,
     idle2,
     lvl1bg,
     instructions,
     slime1, slime2,
-    flipidle1, flipidle2;
+    flipidle1, flipidle2,
+    gameover,
+    lvl2bg;
     /**
      * Loads all of the images (called by the init() in game)
      */
@@ -28,6 +31,8 @@ public class Assets
         flipidle1 = ImageLoader.loadImage("resources/images/idleanimflip1.png");
         flipidle2 = ImageLoader.loadImage("resources/images/idleanimflip2.png");
         lvl1bg = ImageLoader.loadImage("resources/images/lvl1bg.png");
+        lvl2bg = ImageLoader.loadImage("resources/images/lvl1bg.png");
+        gameover = ImageLoader.loadImage("resources/images/lvl1bg.png");
         instructions = ImageLoader.loadImage("resources/images/instruct.png");
         slime1 = ImageLoader.loadImage("resources/images/slime1.png");
         slime2 = ImageLoader.loadImage("resources/images/slime2.png");

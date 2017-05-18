@@ -99,6 +99,8 @@ public class game implements Runnable
             State.setState(instructionsstate);
         }else if(keyManager.enter && State.getState() == instructionsstate && timeforswap >=200){
             State.setState(gamestate);
+        }else if(State.getState() == gamestate && gamestate.getSlime().getHealth() == 0){
+            State.setState(game1state);
         }
         timeforswap+=1;
     }

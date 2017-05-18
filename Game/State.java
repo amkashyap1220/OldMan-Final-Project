@@ -21,7 +21,7 @@ public abstract class State
     public static State getState(){
         return currentstate;
     }
-    
+    public abstract Slime getSlime();
     public abstract void update();
     public abstract void render(Graphics g);
 }

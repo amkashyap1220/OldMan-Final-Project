@@ -6,12 +6,12 @@ import java.awt.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class GameState extends State
+public class Game1State extends State
 {
 
     private OldMan player;
-    public Slime slime;
-    public GameState(game game)
+    private Slime slime;
+    public Game1State(game game)
     {
        super(game);
        player = new OldMan(100,408, game);
@@ -25,14 +25,9 @@ public class GameState extends State
         slime.tick();
     }
     public void render(Graphics g){
-        g.drawImage(Assets.lvl1bg,0,0,null);
+        g.drawImage(Assets.lvl2bg,0,0,null);
         player.render(g);
         slime.render(g);
     }
-    public Slime getSlime(){
-        return slime;
-    }
-    public OldMan getOldMan(){
-        return player;
-    }
+
 }
