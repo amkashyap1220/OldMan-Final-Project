@@ -22,5 +22,7 @@ public class InstructState extends State //implements KeyListener
     public void render(Graphics g){
         g.drawImage(Assets.instructions,0,0,null);
     }
-   
+   public Slime getSlime(){
+        return null;
+    }
 }

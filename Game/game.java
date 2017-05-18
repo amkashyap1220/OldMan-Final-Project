@@ -22,7 +22,7 @@ public class game implements Runnable
     private Graphics g;
     //private BufferedImage testimage;
     public int timeforswap = 0;
-    private State gamestate, menustate, instructionsstate;
+    private State gamestate, menustate, instructionsstate, game1state;
     
     private KeyManager keyManager;
     /**
