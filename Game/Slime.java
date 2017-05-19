@@ -16,7 +16,7 @@ public class Slime extends Creature
     public Slime(float x, float y, game game){
         super(x,y, 100, 75);
         this.game = game;
-        xMove = -3;
+        xMove = -1;
         hitbox = new Rectangle((int)x, (int)y, 75, 75);
     }
    
@@ -24,9 +24,9 @@ public class Slime extends Creature
     public void tick(){
         hitbox = updateHitbox((int)x+10, (int)y+10, 75, 75);
         if (x <= 1)
-           xMove = 3;
+           xMove = 1;
         if (x >= 1000)
-           xMove = -3;
+           xMove = -1;
         move();
     }
     
@@ -67,7 +67,7 @@ public class Slime extends Creature
         {
             x = x + 200;
         }
-        setHealth(health - 1);
+        setHealth(health - 5);
     }
 
 }

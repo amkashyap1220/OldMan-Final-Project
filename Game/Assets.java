@@ -37,7 +37,7 @@ public class Assets
         flipidle1 = ImageLoader.loadImage("resources/images/idleanimflip1.png");
         flipidle2 = ImageLoader.loadImage("resources/images/idleanimflip2.png");
         lvl1bg = ImageLoader.loadImage("resources/images/lvl1bg.png");
-        lvl2bg = ImageLoader.loadImage("resources/images/lvl1bg.png");
+        lvl2bg = ImageLoader.loadImage("resources/images/level2bg.png");
         gameover = ImageLoader.loadImage("resources/images/lvl1bg.png");
         instructions = ImageLoader.loadImage("resources/images/instruct.png");
         slime1 = ImageLoader.loadImage("resources/images/slime1.png");

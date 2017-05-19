@@ -49,6 +49,7 @@ public class game implements Runnable
        //testimage = ImageLoader.loadImage("resources/images/therealtitlescreen.png");
        Assets.init();
        gamestate = new GameState(this);
+       game1state = new Game1State(this);
        menustate = new MenuState(this);
        instructionsstate = new InstructState(this);
        gameover = new GameOverState(this);
@@ -89,9 +90,6 @@ public class game implements Runnable
         {
             State.getState().render(g);
         }
-        
-        
-        
         //End Drawing
         bs.show();
         g.dispose();
@@ -100,17 +98,26 @@ public class game implements Runnable
         {
             State.setState(loadingstate);
             set = true; 
-        }else if(keyManager.enter && State.getState() == instructionsstate && timeforswap >=400){
+        }else if(keyManager.enter && State.getState() == instructionsstate){
             State.setState(gamestate);
+            set = false;
+            timeforswap= 0;
         }else if(State.getState() == gamestate && gamestate.getSlime().getHealth() == 0){
             State.setState(game1state);
-        }else if(State.getState().getOldMan() != null&&State.getState().getOldMan().getHealth() <= 0){
+            //State.setState(instructionsstate);
+        }else if(State.getState().getOldMan() != null && State.getState().getOldMan().getHealth() <= 0){
             State.setState(gameover);
-        }else if(State.getState() == loadingstate && timeforswap <=400){
+            set = true;
+        }else if(timeforswap >= 200 && State.getState() == loadingstate){
             State.setState(instructionsstate);
+        }else if(State.getState() == gameover && timeforswap == 200){
+            State.setState(menustate);
+            set = false; 
+            timeforswap= 0;
         }
-        if(set)
+        if(set){
             timeforswap+=1;
+        }
     }
     /**
      * 
