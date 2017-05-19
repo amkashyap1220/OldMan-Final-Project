@@ -22,7 +22,7 @@ public class game implements Runnable
     private Graphics g;
     //private BufferedImage testimage;
     public int timeforswap = 0;
-    private State gamestate, menustate, instructionsstate, game1state;
+    private State gamestate, menustate, instructionsstate, game1state, gameover;
     
     private KeyManager keyManager;
     /**
@@ -50,7 +50,7 @@ public class game implements Runnable
        gamestate = new GameState(this);
        menustate = new MenuState(this);
        instructionsstate = new InstructState(this);
-       
+       gameover = new GameOver(this);
        //temp
        
        State.setState(menustate);
@@ -101,6 +101,8 @@ public class game implements Runnable
             State.setState(gamestate);
         }else if(State.getState() == gamestate && gamestate.getSlime().getHealth() == 0){
             State.setState(game1state);
+        }else if(State.getState().getOldMan().getHealth() <= 0){
+            State.setState(gameover);
         }
         timeforswap+=1;
     }
