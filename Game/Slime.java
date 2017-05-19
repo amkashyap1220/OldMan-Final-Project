@@ -16,7 +16,7 @@ public class Slime extends Creature
     public Slime(float x, float y, game game){
         super(x,y, 100, 75);
         this.game = game;
-        xMove = -1;
+        xMove = -3;
         hitbox = new Rectangle((int)x, (int)y, 75, 75);
     }
    
@@ -24,9 +24,9 @@ public class Slime extends Creature
     public void tick(){
         hitbox = updateHitbox((int)x+10, (int)y+10, 75, 75);
         if (x <= 1)
-           xMove = 1;
-        if (x >= 1000)
-           xMove = -1;
+           xMove = 3;
+        if (x >= 925)
+           xMove = -3;
         move();
     }
     
@@ -44,7 +44,7 @@ public class Slime extends Creature
         g.drawRect(1000-201,0,201,26);
         g.setColor(Color.green);
         g.fillRect(999-200,1,20*getHealth(),25);
-        g.drawRect((int)x, (int)y+40, 167,  170);
+       
         
         g.drawRect((int)x+10, (int)y+10, 75,  75);
     }

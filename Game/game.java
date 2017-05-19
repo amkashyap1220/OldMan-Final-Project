@@ -108,7 +108,7 @@ public class game implements Runnable
         }else if(State.getState().getOldMan() != null && State.getState().getOldMan().getHealth() <= 0){
             State.setState(gameover);
             set = true;
-        }else if(timeforswap >= 200 && State.getState() == loadingstate){
+        }else if(timeforswap >= 50 && State.getState() == loadingstate){
             State.setState(instructionsstate);
         }else if(State.getState() == gameover && timeforswap == 200){
             State.setState(menustate);

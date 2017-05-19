@@ -11,12 +11,14 @@ public class OldMan extends Creature
     private game game;
     public int count = 0;
     public int hitboxX, hitboxXFar, hitboxY, hitboxYFar;
-    Rectangle hitbox;
+    Rectangle hitbox,punchbox;
     boolean left = false;
+    boolean anim = false;
     public OldMan(float x, float y, game game){
         super(x,y, 167, 250);
         this.game = game;
         hitbox = new Rectangle((int)x, (int)y+40,167,170);
+        punchbox = new Rectangle((int)x+167,(int)y+165,50,50);
     }
     
     private void getInput()
@@ -32,11 +34,13 @@ public class OldMan extends Creature
         {
            xMove = -speed;
            left = true;
+           anim = true;
         }
         if (game.getKeyManager().right)
         {
            xMove = speed;
            left = false;
+           anim = true;
         }
            
            
@@ -45,6 +49,7 @@ public class OldMan extends Creature
     
     public void tick(){
         hitbox = new Rectangle((int)x, (int)y+40,167,170);
+        punchbox = new Rectangle((int)x+167,(int)y+110,50,50);
         getInput();
         move();
     }
@@ -61,26 +66,36 @@ public class OldMan extends Creature
         }else if (y>450){
             y = 450;
         }
-        if (count <40 && left){
+        if (count <20 && left){
             g.drawImage(Assets.idle1, (int) x, (int) y, width, height, null);
         }
-        else if (count <40 && !left)
+        else if (count <20 && !left)
         {
             g.drawImage(Assets.flipidle1, (int) x, (int) y, width, height, null);
         }
         else if (!left)
         {
-            if(count == 100){
+            if(count == 40){
                 count = 0;
             }
-             g.drawImage(Assets.flipidle2, (int) x, (int) y, width, height, null);
+            if(anim){
+                g.drawImage(Assets.flipidle2, (int) x, (int) y, width, height, null);
+            }else{
+                g.drawImage(Assets.flipidle1, (int) x, (int) y, width, height, null);
+            }     
         }
         else{
-            if(count == 100){
+            if(count == 40){
                 count = 0;
             }
-            g.drawImage(Assets.idle2, (int) x, (int) y, width, height, null);
+            
+            if(anim){
+                g.drawImage(Assets.idle2, (int) x, (int) y, width, height, null);
+            }else{
+                g.drawImage(Assets.idle1, (int) x, (int) y, width, height, null);
+            }   
         }
+        anim = false;
         count++;
         //health
         g.setColor(Color.gray);
@@ -88,7 +103,9 @@ public class OldMan extends Creature
         g.setColor(Color.green);
         g.fillRect(1,1,20*getHealth(),25);
         
-        g.drawRect((int)x, (int)y+40, 167,  170);
+        //temp
+        g.drawRect((int)x+167,(int)y+110,50,50);
+        g.drawRect((int)x, (int)y+40,167,170);
     }
     
     public void hit()

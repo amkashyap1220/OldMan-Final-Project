@@ -274,6 +274,7 @@ target18.editor.x=0
 target18.editor.y=0
 target18.height=50
 target18.name=Display
+target18.naviview.expanded=true
 target18.showInterface=false
 target18.type=ClassTarget
 target18.typeParameters=
