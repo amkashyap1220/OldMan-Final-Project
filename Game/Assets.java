@@ -20,7 +20,9 @@ public class Assets
     gameover,
     lvl2bg,
     loadingscreen,
-    deadscreen;
+    deadscreen,
+    cane1,
+    cane2;
     /**
      * Loads all of the images (called by the init() in game)
      */
