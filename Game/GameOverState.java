@@ -17,7 +17,7 @@ public class GameOverState extends State
         
     }
     public void render(Graphics g){
-        g.drawImage(Assets.lvl2bg,0,0,null);
+        g.drawImage(Assets.deadscreen,0,0,null);
     }
     public Slime getSlime(){
         return null;
