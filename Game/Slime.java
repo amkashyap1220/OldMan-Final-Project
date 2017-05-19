@@ -40,6 +40,12 @@ public class Slime extends Creature
             g.drawImage(Assets.slime2, (int) x, (int) y, width, height, null);
         }
         count++;
+        //health
+        g.drawRect(1000-201,0,201,26);
+        g.setColor(Color.green);
+        g.fillRect(999-200,1,20*getHealth(),25);
+        g.drawRect((int)x, (int)y+40, 167,  170);
+        
         g.drawRect((int)x+10, (int)y+10, 75,  75);
     }
     
@@ -59,7 +65,7 @@ public class Slime extends Creature
     
     public void hit()
     {
-        if(xMove == 3)
+        if(xMove == 1)
         {
             x = x - 200;
         }
@@ -67,7 +73,7 @@ public class Slime extends Creature
         {
             x = x + 200;
         }
-        setHealth(health - 5);
+        setHealth(health - 1);
     }
 
 }

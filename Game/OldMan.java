@@ -82,6 +82,12 @@ public class OldMan extends Creature
             g.drawImage(Assets.idle2, (int) x, (int) y, width, height, null);
         }
         count++;
+        //health
+        g.setColor(Color.gray);
+        g.drawRect(0,0,201,26);
+        g.setColor(Color.green);
+        g.fillRect(1,1,20*getHealth(),25);
+        
         g.drawRect((int)x, (int)y+40, 167,  170);
     }
     
