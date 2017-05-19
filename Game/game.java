@@ -22,8 +22,9 @@ public class game implements Runnable
     private Graphics g;
     //private BufferedImage testimage;
     public int timeforswap = 0;
-    private State gamestate, menustate, instructionsstate, game1state, gameover;
+    private State gamestate, menustate, instructionsstate, game1state, gameover, loadingstate;
     
+    public boolean set = false;;
     private KeyManager keyManager;
     /**
      * Default constructor for objects of class game
@@ -50,7 +51,8 @@ public class game implements Runnable
        gamestate = new GameState(this);
        menustate = new MenuState(this);
        instructionsstate = new InstructState(this);
-       gameover = new GameOver(this);
+       gameover = new GameOverState(this);
+       loadingstate = new LoadingState(this); 
        //temp
        
        State.setState(menustate);
@@ -96,15 +98,19 @@ public class game implements Runnable
         //swap through states
         if(keyManager.enter && State.getState() == menustate)
         {
-            State.setState(instructionsstate);
-        }else if(keyManager.enter && State.getState() == instructionsstate && timeforswap >=200){
+            State.setState(loadingstate);
+            set = true; 
+        }else if(keyManager.enter && State.getState() == instructionsstate && timeforswap >=400){
             State.setState(gamestate);
         }else if(State.getState() == gamestate && gamestate.getSlime().getHealth() == 0){
             State.setState(game1state);
-        }else if(State.getState().getOldMan().getHealth() <= 0){
+        }else if(State.getState().getOldMan() != null&&State.getState().getOldMan().getHealth() <= 0){
             State.setState(gameover);
+        }else if(State.getState() == loadingstate && timeforswap <=400){
+            State.setState(instructionsstate);
         }
-        timeforswap+=1;
+        if(set)
+            timeforswap+=1;
     }
     /**
      * 

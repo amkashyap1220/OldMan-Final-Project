@@ -8,4 +8,6 @@ comment2.params=g
 comment2.target=void\ render(java.awt.Graphics)
 comment3.params=
 comment3.target=Slime\ getSlime()
-numComments=4
+comment4.params=
+comment4.target=OldMan\ getOldMan()
+numComments=5

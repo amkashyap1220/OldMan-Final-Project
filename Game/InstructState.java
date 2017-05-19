@@ -25,4 +25,7 @@ public class InstructState extends State //implements KeyListener
    public Slime getSlime(){
         return null;
     }
+    public OldMan getOldMan(){
+        return null;
+    }
 }
