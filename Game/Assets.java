@@ -18,13 +18,15 @@ public class Assets
     slime1, slime2,
     flipidle1, flipidle2,
     gameover,
-    lvl2bg;
+    lvl2bg,
+    loadingscreen;
     /**
      * Loads all of the images (called by the init() in game)
      */
     public static void init()
     {
-        titlescreen = ImageLoader.loadImage("resources/images/therealtitlescreen.png");
+        titlescreen = ImageLoader.loadImage("resources/images/titlescreen.png");
+        titlescreen = ImageLoader.loadImage("resources/images/loadingscreen.png");
         player = ImageLoader.loadImage("resources/images/dalelewis.png");
         idle1 = ImageLoader.loadImage("resources/images/idleanim1.png");
         idle2 = ImageLoader.loadImage("resources/images/idleanim2.png");
