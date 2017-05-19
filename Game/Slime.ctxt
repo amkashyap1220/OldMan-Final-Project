@@ -9,4 +9,6 @@ comment3.params=hitboxX\ hitboxXFar\ hitboxY\ hitboxYFar
 comment3.target=void\ createHitbox(int,\ int,\ int,\ int)
 comment4.params=x\ y\ x2\ y2
 comment4.target=java.awt.Rectangle\ updateHitbox(int,\ int,\ int,\ int)
-numComments=5
+comment5.params=
+comment5.target=void\ hit()
+numComments=6

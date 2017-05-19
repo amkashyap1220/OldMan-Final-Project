@@ -20,8 +20,12 @@ public class GameState extends State
     
     public void update(){
         if(player.hitbox.intersects(slime.hitbox))
-            player.hit();
-        if()
+        {
+            if (game.getKeyManager().punch)
+                slime.hit();
+            else
+                player.hit();
+        }
         player.tick();
         slime.tick();
     }

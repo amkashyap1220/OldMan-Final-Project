@@ -38,8 +38,7 @@ public class OldMan extends Creature
            xMove = speed;
            left = false;
         }
-        if (game.getKeyManager().punch)
-           Punch punch = new Punch(hitbox);
+           
            
         
     }

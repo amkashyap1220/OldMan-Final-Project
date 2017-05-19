@@ -23,9 +23,9 @@ public class Slime extends Creature
     
     public void tick(){
         hitbox = updateHitbox((int)x+10, (int)y+10, 75, 75);
-        if (x == 1)
+        if (x <= 1)
            xMove = 3;
-        if (x == 1000)
+        if (x >= 1000)
            xMove = -3;
         move();
     }
@@ -55,6 +55,19 @@ public class Slime extends Creature
     {
         Rectangle wow = new Rectangle(x, y, x2, y2);
         return wow;
+    }
+    
+    public void hit()
+    {
+        if(xMove == 3)
+        {
+            x = x - 200;
+        }
+        else
+        {
+            x = x + 200;
+        }
+        setHealth(health - 1);
     }
 
 }
