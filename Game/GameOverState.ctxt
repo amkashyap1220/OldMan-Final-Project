@@ -1,12 +1,14 @@
 #BlueJ class context
-comment0.params=game
-comment0.target=GameOverState(game)
-comment1.params=
-comment1.target=void\ update()
-comment2.params=g
-comment2.target=void\ render(java.awt.Graphics)
-comment3.params=
-comment3.target=Slime\ getSlime()
+comment0.target=GameOverState
+comment0.text=\n\ Write\ a\ description\ of\ class\ GameState\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=game
+comment1.target=GameOverState(game)
+comment2.params=
+comment2.target=void\ update()
+comment3.params=g
+comment3.target=void\ render(java.awt.Graphics)
 comment4.params=
-comment4.target=OldMan\ getOldMan()
-numComments=5
+comment4.target=Slime\ getSlime()
+comment5.params=
+comment5.target=OldMan\ getOldMan()
+numComments=6

@@ -63,7 +63,7 @@ public class Slime extends Creature
         return wow;
     }
     
-    public void hit()
+    public void hit(int damage)
     {
         if(xMove == 1)
         {
@@ -73,7 +73,7 @@ public class Slime extends Creature
         {
             x = x + 200;
         }
-        setHealth(health - 1);
+        setHealth(health - damage);
     }
 
 }

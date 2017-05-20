@@ -108,10 +108,10 @@ public class OldMan extends Creature
         g.drawRect((int)x, (int)y+40,167,170);
     }
     
-    public void hit()
+    public void hit(int damage)
     {
         x = x - 50;
-        setHealth(health - 1);
+        setHealth(health - damage);
     }
     
    

@@ -22,9 +22,9 @@ public class Game1State extends State
         if(player.hitbox.intersects(slime.hitbox))
         {
             if (game.getKeyManager().punch)
-                slime.hit();
+                slime.hit(1);
             else
-                player.hit();
+                player.hit(1);
         }
         player.tick();
         slime.tick();

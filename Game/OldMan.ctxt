@@ -1,12 +1,14 @@
 #BlueJ class context
-comment0.params=x\ y\ game
-comment0.target=OldMan(float,\ float,\ game)
-comment1.params=
-comment1.target=void\ getInput()
+comment0.target=OldMan
+comment0.text=\n\ Write\ a\ description\ of\ class\ OldMan\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=x\ y\ game
+comment1.target=OldMan(float,\ float,\ game)
 comment2.params=
-comment2.target=void\ tick()
-comment3.params=g
-comment3.target=void\ render(java.awt.Graphics)
-comment4.params=
-comment4.target=void\ hit()
-numComments=5
+comment2.target=void\ getInput()
+comment3.params=
+comment3.target=void\ tick()
+comment4.params=g
+comment4.target=void\ render(java.awt.Graphics)
+comment5.params=damage
+comment5.target=void\ hit(int)
+numComments=6

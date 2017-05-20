@@ -42,5 +42,7 @@ public class Assets
         instructions = ImageLoader.loadImage("resources/images/instruct.png");
         slime1 = ImageLoader.loadImage("resources/images/slime1.png");
         slime2 = ImageLoader.loadImage("resources/images/slime2.png");
+        
+        cane1 = ImageLoader.loadImage("resources/images/cane.png");
     }
 }
