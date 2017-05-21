@@ -9,26 +9,28 @@ import java.awt.*;
 public class Can extends Creature
 {
     /** description of instance variable x (add comment for each instance variable) */
-    private int x;
 
+    Rectangle hitbox;
     /**
      * Default constructor for objects of class Can
      */
     public Can(float x, float y, int width, int height)
     {
         super(x, y, width, height);
+        hitbox = new Rectangle((int)x, (int)y,70,30);
     }
 
     public void tick()
     {
-        xMove = 3;
-        move();
+        hitbox = new Rectangle((int)x, (int)y,70,30);
+        x += 6;
+        
     }
     public void render(Graphics g)
     {
         
         g.drawImage(Assets.cane1, (int) x, (int) y, width, height, null);
-        
+        g.drawRect((int)x, (int)y,70,30);
     }
     
     

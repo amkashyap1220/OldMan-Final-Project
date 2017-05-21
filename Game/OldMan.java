@@ -110,7 +110,7 @@ public class OldMan extends Creature
     
     public void hit(int damage)
     {
-        x = x - 50;
+        x = x - 100;
         setHealth(health - damage);
     }
     
