@@ -1,5 +1,7 @@
 #BlueJ class context
-comment0.params=args
-comment0.target=void\ main(java.lang.String[])
-comment0.text=\r\n\ main\ method\ of\ the\ game\r\n
-numComments=1
+comment0.target=Launcher
+comment0.text=\r\n\ Game\ runs\ through\ here\r\n\ \r\n\ @author\ Alexander,\ Maggie,\ Justin\r\n\ @version\ 1.0.0\r\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment1.text=\r\n\ main\ method\ of\ the\ game\r\n
+numComments=2

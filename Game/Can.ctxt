@@ -1,9 +1,11 @@
 #BlueJ class context
-comment0.params=x\ y\ width\ height
-comment0.target=Can(float,\ float,\ int,\ int)
-comment0.text=\r\n\ Default\ constructor\ for\ objects\ of\ class\ Can\r\n
-comment1.params=
-comment1.target=void\ tick()
-comment2.params=g
-comment2.target=void\ render(java.awt.Graphics)
-numComments=3
+comment0.target=Can
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Can\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=x\ y\ width\ height
+comment1.target=Can(float,\ float,\ int,\ int)
+comment1.text=\r\n\ Default\ constructor\ for\ objects\ of\ class\ Can\r\n
+comment2.params=
+comment2.target=void\ tick()
+comment3.params=g
+comment3.target=void\ render(java.awt.Graphics)
+numComments=4
