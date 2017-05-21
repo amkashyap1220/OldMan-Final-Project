@@ -1,24 +1,22 @@
-
 import java.awt.*;
 /**
- * Write a description of class GameState here.
+ * Write a description of class Game2State here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class GameState extends State
+public class Game2State extends State
 {
-
     private OldMan player;
-    public Slime slime;
+    private Slime slime;
     public Can can;
     public boolean fire = false;
-    public GameState(game game)
+    public Game2State(game game)
     {
        super(game);
        player = new OldMan(100,408, game);
        slime = new Slime(850, 550, game);
-       can = new Can((float) player.punchbox.getX(), (float) player.punchbox.getY(),70,30);
+       can = new Can(player.getX(),player.getY(),70,30);
     }
     
     public void update(){
@@ -52,7 +50,7 @@ public class GameState extends State
         
     }
     public void render(Graphics g){
-        g.drawImage(Assets.lvl1bg,0,0,null);
+        g.drawImage(Assets.lvl3bg,0,0,null);
         player.render(g);
         slime.render(g);
         if(fire && can.getX() <= 1000){

@@ -22,7 +22,7 @@ public class game implements Runnable
     private Graphics g;
     //private BufferedImage testimage;
     public int timeforswap = 0;
-    private State gamestate, menustate, instructionsstate, game1state, gameover, loadingstate;
+    private State gamestate, menustate, instructionsstate, game1state, game2state, bossstate, gameover, loadingstate;
     
     public boolean set = false;;
     private KeyManager keyManager;
@@ -50,6 +50,8 @@ public class game implements Runnable
        Assets.init();
        gamestate = new GameState(this);
        game1state = new Game1State(this);
+       game2state = new Game2State(this);
+       bossstate = new BossState(this);
        menustate = new MenuState(this);
        instructionsstate = new InstructState(this);
        gameover = new GameOverState(this);
@@ -112,10 +114,15 @@ public class game implements Runnable
             State.setState(instructionsstate);
         }else if(State.getState() == gameover && timeforswap == 200){
             State.setState(menustate);
+            reset();
             gamestate.getOldMan().setHealth(10);
             game1state.getOldMan().setHealth(10);
             set = false; 
             timeforswap= 0;
+        }else if(State.getState() == game1state && game1state.getSlime().getHealth() == 0){
+            State.setState(game2state);
+        }else if(State.getState() == game2state && game2state.getSlime().getHealth() == 0){
+            State.setState(bossstate);
         }
         if(set){
             timeforswap+=1;
@@ -188,5 +195,13 @@ public class game implements Runnable
                 e.printStackTrace();
             }
         }
+    }
+    
+    public void reset()
+    {
+        gamestate = new GameState(this);
+        game1state = new Game1State(this);
+        game2state = new Game2State(this);
+        bossstate = new BossState(this);
     }
 }

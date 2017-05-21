@@ -19,10 +19,13 @@ public class Assets
     flipidle1, flipidle2,
     gameover,
     lvl2bg,
+    lvl3bg,
+    bossbg,
     loadingscreen,
     deadscreen,
     cane1,
-    cane2;
+    cane2,
+    boss;
     /**
      * Loads all of the images (called by the init() in game)
      */
@@ -38,11 +41,13 @@ public class Assets
         flipidle2 = ImageLoader.loadImage("resources/images/idleanimflip2.png");
         lvl1bg = ImageLoader.loadImage("resources/images/lvl1bg.png");
         lvl2bg = ImageLoader.loadImage("resources/images/level2bg.png");
+        lvl3bg = ImageLoader.loadImage("resources/images/level3bg.png");
+        bossbg = ImageLoader.loadImage("resources/images/bossbg.png");
         gameover = ImageLoader.loadImage("resources/images/lvl1bg.png");
         instructions = ImageLoader.loadImage("resources/images/instruct.png");
         slime1 = ImageLoader.loadImage("resources/images/slime1.png");
         slime2 = ImageLoader.loadImage("resources/images/slime2.png");
-        
+        boss = ImageLoader.loadImage("resources/images/mrhayes1.jpg");
         cane1 = ImageLoader.loadImage("resources/images/cane.png");
     }
 }

@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=x\ y\ game
+comment0.target=Boss(float,\ float,\ game)
+comment1.params=
+comment1.target=void\ tick()
+comment2.params=g
+comment2.target=void\ render(java.awt.Graphics)
+comment3.params=hitboxX\ hitboxXFar\ hitboxY\ hitboxYFar
+comment3.target=void\ createHitbox(int,\ int,\ int,\ int)
+comment4.params=x\ y\ x2\ y2
+comment4.target=java.awt.Rectangle\ updateHitbox(int,\ int,\ int,\ int)
+comment5.params=damage
+comment5.target=void\ hit(int)
+numComments=6

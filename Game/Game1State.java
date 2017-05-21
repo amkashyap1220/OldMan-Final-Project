@@ -36,14 +36,15 @@ public class Game1State extends State
             fire = true;
             
         }
-        if(can.hitbox.intersects(slime.hitbox)){
+        if(can != null && can.hitbox.intersects(slime.hitbox)){
             fire = false;
+            can = null;
             slime.hit(1);
         }
-        if(fire && can.getX() <= 1000){
+        if(fire && can != null && can.getX() <= 1000){
             can.tick();
         }
-        if(can.getX() >= 1000){
+        if(can != null && can.getX() >= 1000){
             fire = false;
         }
         player.tick();
