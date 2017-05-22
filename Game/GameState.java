@@ -30,6 +30,7 @@ public class GameState extends State
         {
             if (game.getKeyManager().punch && canpunch){
                 slime.hit(1);
+                cancane  = false;
             }
         }
         if(player.hitbox.intersects(slime.hitbox)){

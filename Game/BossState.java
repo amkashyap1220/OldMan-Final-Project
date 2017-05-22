@@ -22,17 +22,18 @@ public class BossState extends State
     public void update(){
         if(player.punchbox.intersects(MRHAYES.hitbox))
         {
-            if (game.getKeyManager().punch){
+            if (game.getKeyManager().punch && canpunch){
                 MRHAYES.hit(1);
+                cancane  = false;
             }
         }
         if(player.hitbox.intersects(MRHAYES.hitbox)){
             player.hit(1);
         }
-        if(game.getKeyManager().can){
+        if(game.getKeyManager().can && cancane){
             can = new Can((float) player.punchbox.getX(), (float) player.punchbox.getY(),70,30);
             fire = true;
-            
+            cancane = false;
         }
         if(can != null && can.hitbox.intersects(MRHAYES.hitbox)){
             fire = false;

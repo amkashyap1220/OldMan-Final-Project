@@ -13,6 +13,10 @@ public class Game1State extends State
     private Snake snake;
     public Can can;
     public boolean fire = false;
+    public boolean canpunch = true;
+    public boolean cancane = true;
+    public int canpunch1 = 0;
+    public int cancane1 = 0;
     public Game1State(game game)
     {
        super(game);
@@ -24,17 +28,18 @@ public class Game1State extends State
     public void update(){
         if(player.punchbox.intersects(snake.hitbox))
         {
-            if (game.getKeyManager().punch){
+            if (game.getKeyManager().punch && canpunch){
                 snake.hit(1);
+                cancane  = false;
             }
         }
         if(player.hitbox.intersects(snake.hitbox)){
             player.hit(1);
         }
-        if(game.getKeyManager().can){
+        if(game.getKeyManager().can && cancane){
             can = new Can((float) player.punchbox.getX(), (float) player.punchbox.getY(),70,30);
             fire = true;
-            
+            cancane = false;
         }
         if(can != null && can.hitbox.intersects(snake.hitbox)){
             fire = false;
