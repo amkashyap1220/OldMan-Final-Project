@@ -11,4 +11,6 @@ comment4.params=
 comment4.target=Snake\ getSnake()
 comment5.params=
 comment5.target=OldMan\ getOldMan()
-numComments=6
+comment6.params=
+comment6.target=Boss\ getBoss()
+numComments=7

@@ -31,4 +31,7 @@ public class InstructState extends State //implements KeyListener
     public OldMan getOldMan(){
         return null;
     }
+    public Boss getBoss(){
+     return null;   
+    }
 }

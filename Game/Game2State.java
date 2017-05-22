@@ -15,6 +15,7 @@ public class Game2State extends State
     public boolean cancane = true;
     public int canpunch1 = 0;
     public int cancane1 = 0;
+    int count = 0;
     public Game2State(game game)
     {
        super(game);
@@ -22,7 +23,9 @@ public class Game2State extends State
        slime = new Slime(850, 550, game);
        can = new Can(player.getX(),player.getY(),70,30);
     }
-    
+    public Boss getBoss(){
+     return null;   
+    }
     public void update(){
         if(player.punchbox.intersects(slime.hitbox))
         {
@@ -65,12 +68,16 @@ public class Game2State extends State
         
     }
     public void render(Graphics g){
-        g.drawImage(Assets.lvl3bg,0,0,null);
-        player.render(g);
-        slime.render(g);
-        if(fire && can.getX() <= 1000){
-            can.render(g);
+        g.drawImage(Assets.lvl1_3,0,0,null);
+        if(count >=90){
+            g.drawImage(Assets.lvl3bg,0,0,null);
+            player.render(g);
+            slime.render(g);
+            if(fire && can.getX() <= 1000){
+                can.render(g);
+            }
         }
+        count++;
     }
     public Slime getSlime(){
         return slime;

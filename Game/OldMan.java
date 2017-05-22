@@ -17,6 +17,9 @@ public class OldMan extends Creature
     boolean throwing = false;
     public int cancane1 = 0;
     public boolean cancane = true;
+    public boolean timeforcane1 = true;
+    public int timeforcane = 0;
+    public int count2 =0;
     public OldMan(float x, float y, game game){
         super(x,y, 167, 250);
         this.game = game;
@@ -46,19 +49,26 @@ public class OldMan extends Creature
            left = false;
            anim = true;
         }
-        if (game.getKeyManager().can)
+        
+        if (game.getKeyManager().can && timeforcane1)
         {
            throwing = true;
-           cancane = false;
+           if (count2 >30){
+               timeforcane1 = false;
+               count2=0;
+            }
+           count2++;
         }   
-        
-        if(!cancane && cancane1 >= (60*3)){
-            cancane = true;
-            cancane1 = 0;
+        if(!timeforcane1 && timeforcane >= (60*3)){
+            timeforcane1 = true;
+            timeforcane = 0;
         }
-        cancane1++;
+        timeforcane++;
+        
+        
+        
     }
-    
+   
     public void tick(){
         hitbox = new Rectangle((int)x, (int)y+40,167,170);
         punchbox = new Rectangle((int)x+167,(int)y+110,50,50);
@@ -79,34 +89,34 @@ public class OldMan extends Creature
         }else if (y>450){
             y = 450;
         }
-        if (count <40 && left){
-            if(throwing && !cancane){
-                g.drawImage(Assets.throw1, (int) x, (int) y, width, height, null);
+        if (count <30 && left){
+            if(throwing){
+                g.drawImage(Assets.throw2, (int) x, (int) y, width, height, null);
             }else{
                 g.drawImage(Assets.idle1, (int) x, (int) y, width, height, null);
             }
         }
-        else if (count <40 && !left)
+        else if (count <30 && !left)
         {
-            if(throwing&& !cancane){
-                g.drawImage(Assets.throw1, (int) x, (int) y, width, height, null);
+            if(throwing){
+                g.drawImage(Assets.throw2, (int) x, (int) y, width, height, null);
             }else{
                 g.drawImage(Assets.flipidle1, (int) x, (int) y, width, height, null);
             }
         }
         else if (!left)
         {
-            if(count == 80){
+            if(count == 60){
                 count = 0;
             }
             if(anim){
-                if(throwing&& !cancane){
+                if(throwing){
                     g.drawImage(Assets.throw2, (int) x, (int) y, width, height, null);
                 }else{
                     g.drawImage(Assets.flipwalking2, (int) x, (int) y, width, height, null);
                 }
             }else{
-                if(throwing&& !cancane){
+                if(throwing){
                     g.drawImage(Assets.throw2, (int) x, (int) y, width, height, null);
                 }else{
                     g.drawImage(Assets.flipidle2, (int) x, (int) y, width, height, null);
@@ -114,18 +124,18 @@ public class OldMan extends Creature
             }     
         }
         else{
-            if(count == 80){
+            if(count == 60){
                 count = 0;
             }
             
             if(anim){
-                if(throwing&& !cancane){
+                if(throwing){
                     g.drawImage(Assets.throw2, (int) x, (int) y, width, height, null);
                 }else{
                     g.drawImage(Assets.walking2, (int) x, (int) y, width, height, null);
                 }
             }else{
-                if(throwing&& !cancane){
+                if(throwing){
                     g.drawImage(Assets.throw2, (int) x, (int) y, width, height, null);
                 }else{
                     g.drawImage(Assets.idle2, (int) x, (int) y, width, height, null);

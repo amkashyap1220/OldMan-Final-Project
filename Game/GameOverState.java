@@ -28,4 +28,7 @@ public class GameOverState extends State
     public OldMan getOldMan(){
         return null;
     }
+    public Boss getBoss(){
+     return null;   
+    }
 }

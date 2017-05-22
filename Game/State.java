@@ -24,6 +24,7 @@ public abstract class State
     public abstract Slime getSlime();
     public abstract Snake getSnake();
     public abstract OldMan getOldMan();
+    public abstract Boss getBoss();
     public abstract void update();
     public abstract void render(Graphics g);
 }

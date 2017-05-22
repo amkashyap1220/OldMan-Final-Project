@@ -17,6 +17,7 @@ public class GameState extends State
     public boolean cancane = true;
     public int canpunch1 = 0;
     public int cancane1 = 0;
+    public int count =0;
     public GameState(game game)
     {
        super(game);
@@ -67,12 +68,16 @@ public class GameState extends State
         
     }
     public void render(Graphics g){
-        g.drawImage(Assets.lvl1bg,0,0,null);
-        player.render(g);
-        slime.render(g);
-        if(fire && can.getX() <= 1000){
-            can.render(g);
+        g.drawImage(Assets.lvl1_1,0,0,null);
+        if(count >=90){
+            g.drawImage(Assets.lvl1bg,0,0,null);
+            player.render(g);
+            slime.render(g);
+            if(fire && can.getX() <= 1000){
+                can.render(g);
+            }
         }
+        count++;
     }
     public Slime getSlime(){
         return slime;
@@ -82,5 +87,8 @@ public class GameState extends State
     }
     public OldMan getOldMan(){
         return player;
+    }
+    public Boss getBoss(){
+     return null;   
     }
 }

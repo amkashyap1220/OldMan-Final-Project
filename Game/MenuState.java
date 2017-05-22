@@ -8,7 +8,9 @@ import java.awt.event.*;
  */
 public class MenuState extends State //implements KeyListener
 {
- 
+    public Boss getBoss(){
+     return null;   
+    }
     /**
      * Default constructor for objects of class MenuState
      */

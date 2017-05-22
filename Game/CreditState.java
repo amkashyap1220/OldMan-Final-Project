@@ -6,15 +6,13 @@ import java.awt.event.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class LoadingState extends State //implements KeyListener
+public class CreditState extends State //implements KeyListener
 {
-    public Boss getBoss(){
-     return null;   
-    }
+ 
     /**
      * Default constructor for objects of class MenuState
      */
-    public LoadingState(game game)
+    public CreditState(game game)
     {
         super(game);
     }
@@ -22,9 +20,9 @@ public class LoadingState extends State //implements KeyListener
         
     }
     public void render(Graphics g){
-        g.drawImage(Assets.loadingscreen,0,0,null);
+        g.drawImage(Assets.credits,0,0,null);
     }
-    public Slime getSlime(){
+   public Slime getSlime(){
         return null;
     }
     public Snake getSnake(){
@@ -32,5 +30,8 @@ public class LoadingState extends State //implements KeyListener
     }
     public OldMan getOldMan(){
         return null;
+    }
+    public Boss getBoss(){
+     return null;   
     }
 }

@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.params=game
-comment0.target=InstructState(game)
+comment0.target=CreditState(game)
 comment0.text=\r\n\ Default\ constructor\ for\ objects\ of\ class\ MenuState\r\n
 comment1.params=
 comment1.target=void\ update()
