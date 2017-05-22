@@ -42,10 +42,10 @@ public class Assets
         player = ImageLoader.loadImage("resources/images/dalelewis.png");
         idle1 = ImageLoader.loadImage("resources/images/idleanim1.png");
         idle2 = ImageLoader.loadImage("resources/images/idleanim2.png");
-        walking1 = ImageLoader.loadImage("resources/images/walking1.png");
-        walking2 = ImageLoader.loadImage("resources/images/walking2.png");
-        flipwalking1 = ImageLoader.loadImage("resources/images/flipwalking1.png");
-        flipwalking2 = ImageLoader.loadImage("resources/images/flipwalking2.png");
+        walking1 = ImageLoader.loadImage("resources/images/flipwalking1.png");
+        walking2 = ImageLoader.loadImage("resources/images/flipwalking2.png");
+        flipwalking1 = ImageLoader.loadImage("resources/images/walking1.png");
+        flipwalking2 = ImageLoader.loadImage("resources/images/walking2.png");
         throw1 = ImageLoader.loadImage("resources/images/throwanim.png");
         throw2 = ImageLoader.loadImage("resources/images/throwanim2.png");
         flipthrow1 = ImageLoader.loadImage("resources/images/flipthrowanim.png");

@@ -11,14 +11,18 @@ public class OldMan extends Creature
     private game game;
     public int count = 0;
     public int hitboxX, hitboxXFar, hitboxY, hitboxYFar;
-    Rectangle hitbox,punchbox;
+    Rectangle hitbox,punchbox,punchbox1;
     boolean left = false;
     boolean anim = false;
+    boolean throwing = false;
+    public int cancane1 = 0;
+    public boolean cancane = true;
     public OldMan(float x, float y, game game){
         super(x,y, 167, 250);
         this.game = game;
         hitbox = new Rectangle((int)x, (int)y+40,167,170);
         punchbox = new Rectangle((int)x+167,(int)y+165,50,50);
+        punchbox1 = new Rectangle((int)x,(int)y+110,50,50);
     }
     
     private void getInput()
@@ -42,14 +46,23 @@ public class OldMan extends Creature
            left = false;
            anim = true;
         }
-           
-           
+        if (game.getKeyManager().can)
+        {
+           throwing = true;
+           cancane = false;
+        }   
         
+        if(!cancane && cancane1 >= (60*3)){
+            cancane = true;
+            cancane1 = 0;
+        }
+        cancane1++;
     }
     
     public void tick(){
         hitbox = new Rectangle((int)x, (int)y+40,167,170);
         punchbox = new Rectangle((int)x+167,(int)y+110,50,50);
+        punchbox1 = new Rectangle((int)x,(int)y+110,50,50);
         getInput();
         move();
     }
@@ -66,36 +79,61 @@ public class OldMan extends Creature
         }else if (y>450){
             y = 450;
         }
-        if (count <20 && left){
-            g.drawImage(Assets.idle1, (int) x, (int) y, width, height, null);
+        if (count <40 && left){
+            if(throwing && !cancane){
+                g.drawImage(Assets.throw1, (int) x, (int) y, width, height, null);
+            }else{
+                g.drawImage(Assets.idle1, (int) x, (int) y, width, height, null);
+            }
         }
-        else if (count <20 && !left)
+        else if (count <40 && !left)
         {
-            g.drawImage(Assets.flipidle1, (int) x, (int) y, width, height, null);
+            if(throwing&& !cancane){
+                g.drawImage(Assets.throw1, (int) x, (int) y, width, height, null);
+            }else{
+                g.drawImage(Assets.flipidle1, (int) x, (int) y, width, height, null);
+            }
         }
         else if (!left)
         {
-            if(count == 40){
+            if(count == 80){
                 count = 0;
             }
             if(anim){
-                g.drawImage(Assets.flipidle2, (int) x, (int) y, width, height, null);
+                if(throwing&& !cancane){
+                    g.drawImage(Assets.throw2, (int) x, (int) y, width, height, null);
+                }else{
+                    g.drawImage(Assets.flipwalking2, (int) x, (int) y, width, height, null);
+                }
             }else{
-                g.drawImage(Assets.flipidle1, (int) x, (int) y, width, height, null);
+                if(throwing&& !cancane){
+                    g.drawImage(Assets.throw2, (int) x, (int) y, width, height, null);
+                }else{
+                    g.drawImage(Assets.flipidle2, (int) x, (int) y, width, height, null);
+                }
             }     
         }
         else{
-            if(count == 40){
+            if(count == 80){
                 count = 0;
             }
             
             if(anim){
-                g.drawImage(Assets.idle2, (int) x, (int) y, width, height, null);
+                if(throwing&& !cancane){
+                    g.drawImage(Assets.throw2, (int) x, (int) y, width, height, null);
+                }else{
+                    g.drawImage(Assets.walking2, (int) x, (int) y, width, height, null);
+                }
             }else{
-                g.drawImage(Assets.idle1, (int) x, (int) y, width, height, null);
+                if(throwing&& !cancane){
+                    g.drawImage(Assets.throw2, (int) x, (int) y, width, height, null);
+                }else{
+                    g.drawImage(Assets.idle2, (int) x, (int) y, width, height, null);
+                }
             }   
         }
         anim = false;
+        throwing = false;
         count++;
         //health
         g.setColor(Color.gray);
@@ -106,6 +144,7 @@ public class OldMan extends Creature
         //temp
         g.drawRect((int)x+167,(int)y+110,50,50);
         g.drawRect((int)x, (int)y+40,167,170);
+        g.drawRect((int)x-50,(int)y+110,50,50);
     }
     
     public void hit(int damage)

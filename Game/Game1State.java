@@ -54,6 +54,16 @@ public class Game1State extends State
         }
         player.tick();
         snake.tick();
+        if(!cancane && cancane1 >= (60*3)){
+            cancane = true;
+            cancane1 = 0;
+        }
+        if(!canpunch && canpunch1 >= (60*1)){
+            cancane = true;
+            cancane1 = 0;
+        }
+        cancane1++;
+        canpunch1++;
         
     }
     public void render(Graphics g){

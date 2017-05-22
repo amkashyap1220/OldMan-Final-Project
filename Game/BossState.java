@@ -11,6 +11,10 @@ public class BossState extends State
     private Boss MRHAYES;
     public Can can;
     public boolean fire = false;
+    public boolean canpunch = true;
+    public boolean cancane = true;
+    public int canpunch1 = 0;
+    public int cancane1 = 0;
     public BossState(game game)
     {
        super(game);
@@ -48,6 +52,16 @@ public class BossState extends State
         }
         player.tick();
         MRHAYES.tick();
+        if(!cancane && cancane1 >= (60*3)){
+            cancane = true;
+            cancane1 = 0;
+        }
+        if(!canpunch && canpunch1 >= (60*1)){
+            cancane = true;
+            cancane1 = 0;
+        }
+        cancane1++;
+        canpunch1++;
         
     }
     public void render(Graphics g){

@@ -11,6 +11,10 @@ public class Game2State extends State
     private Slime slime;
     public Can can;
     public boolean fire = false;
+    public boolean canpunch = true;
+    public boolean cancane = true;
+    public int canpunch1 = 0;
+    public int cancane1 = 0;
     public Game2State(game game)
     {
        super(game);
@@ -22,17 +26,18 @@ public class Game2State extends State
     public void update(){
         if(player.punchbox.intersects(slime.hitbox))
         {
-            if (game.getKeyManager().punch){
+            if (game.getKeyManager().punch && canpunch){
                 slime.hit(1);
+                cancane  = false;
             }
         }
         if(player.hitbox.intersects(slime.hitbox)){
             player.hit(1);
         }
-        if(game.getKeyManager().can){
+        if(game.getKeyManager().can && cancane){
             can = new Can((float) player.punchbox.getX(), (float) player.punchbox.getY(),70,30);
             fire = true;
-            
+            cancane = false;
         }
         if(can != null && can.hitbox.intersects(slime.hitbox)){
             fire = false;
@@ -47,6 +52,16 @@ public class Game2State extends State
         }
         player.tick();
         slime.tick();
+        if(!cancane && cancane1 >= (60*3)){
+            cancane = true;
+            cancane1 = 0;
+        }
+        if(!canpunch && canpunch1 >= (60*1)){
+            cancane = true;
+            cancane1 = 0;
+        }
+        cancane1++;
+        canpunch1++;
         
     }
     public void render(Graphics g){
