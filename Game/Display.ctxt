@@ -1,15 +1,13 @@
 #BlueJ class context
-comment0.target=Display
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ display\ here.\r\n\ \r\n\ @author\ Alexander,\ Maggie,\ and\ Justin\r\n\ @version\ 1.0.0\r\n
-comment1.params=height\ width\ title
-comment1.target=Display(int,\ int,\ java.lang.String)
-comment1.text=\r\n\ Default\ constructor\ for\ objects\ of\ class\ display\r\n\ @param\ Height,\ Width,\ and\ Title\ of\ a\ display\r\n
+comment0.params=height\ width\ title
+comment0.target=Display(int,\ int,\ java.lang.String)
+comment0.text=\r\n\ Default\ constructor\ for\ objects\ of\ class\ display\r\n\ @param\ Height,\ Width,\ and\ Title\ of\ a\ display\r\n
+comment1.params=
+comment1.target=void\ createDisplay()
+comment1.text=\r\n\ Creates\ a\ display\ and\ sets\ visable\r\n
 comment2.params=
-comment2.target=void\ createDisplay()
-comment2.text=\r\n\ Creates\ a\ display\ and\ sets\ visable\r\n
+comment2.target=java.awt.Canvas\ getCanvas()
+comment2.text=\r\n\ The\ get\ method\ for\ the\ canvas\r\n\ @return\ the\ canvas\r\n
 comment3.params=
-comment3.target=java.awt.Canvas\ getCanvas()
-comment3.text=\r\n\ The\ get\ method\ for\ the\ canvas\r\n\ @return\ the\ canvas\r\n
-comment4.params=
-comment4.target=javax.swing.JFrame\ getFrame()
-numComments=5
+comment3.target=javax.swing.JFrame\ getFrame()
+numComments=4
