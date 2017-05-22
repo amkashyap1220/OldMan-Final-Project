@@ -22,6 +22,9 @@ public class GameOverState extends State
     public Slime getSlime(){
         return null;
     }
+    public Snake getSnake(){
+        return null;
+    }
     public OldMan getOldMan(){
         return null;
     }

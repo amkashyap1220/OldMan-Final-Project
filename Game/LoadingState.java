@@ -25,6 +25,9 @@ public class LoadingState extends State //implements KeyListener
     public Slime getSlime(){
         return null;
     }
+    public Snake getSnake(){
+        return null;
+    }
     public OldMan getOldMan(){
         return null;
     }

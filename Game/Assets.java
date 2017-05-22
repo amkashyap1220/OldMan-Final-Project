@@ -16,6 +16,7 @@ public class Assets
     lvl1bg, lvl2bg, lvl3bg,
     instructions,
     slime1, slime2,
+    snake1, snake2,
     flipidle1, flipidle2,
     gameover,
     bossbg,
@@ -45,6 +46,8 @@ public class Assets
         instructions = ImageLoader.loadImage("resources/images/instruct.png");
         slime1 = ImageLoader.loadImage("resources/images/slime1.png");
         slime2 = ImageLoader.loadImage("resources/images/slime2.png");
+        snake1 = ImageLoader.loadImage("resources/images/snake1.png");
+        snake2 = ImageLoader.loadImage("resources/images/snake2.png");
         boss = ImageLoader.loadImage("resources/images/mrhayes1.jpg");
         cane1 = ImageLoader.loadImage("resources/images/cane.png");
     }

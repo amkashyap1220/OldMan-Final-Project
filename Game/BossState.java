@@ -60,6 +60,9 @@ public class BossState extends State
     public Slime getSlime(){
         return null;
     }
+    public Snake getSnake(){
+        return null;
+    }
     public Boss getBoss()
     {
         return MRHAYES;

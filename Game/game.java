@@ -119,7 +119,7 @@ public class game implements Runnable
             game1state.getOldMan().setHealth(10);
             set = false; 
             timeforswap= 0;
-        }else if(State.getState() == game1state && game1state.getSlime().getHealth() == 0){
+        }else if(State.getState() == game1state && game1state.getSnake().getHealth() == 0){
             State.setState(game2state);
         }else if(State.getState() == game2state && game2state.getSlime().getHealth() == 0){
             State.setState(bossstate);
