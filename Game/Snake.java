@@ -17,6 +17,7 @@ public class Snake extends Creature
         super(x,y, 100, 75);
         this.game = game;
         xMove = -3;
+        yMove = 3;
         hitbox = new Rectangle((int)x, (int)y, 75, 75);
     }
    
@@ -27,6 +28,13 @@ public class Snake extends Creature
            xMove = 3;
         if (x >= 925)
            xMove = -3;
+        if(y <= 400)
+        {
+            yMove = 3;
+        }
+        if (y >= 600){
+            yMove = -3;
+        }
         move();
     }
     
