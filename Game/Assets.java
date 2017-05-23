@@ -25,6 +25,7 @@ public class Assets
     gameover,
     cane1, cane2,
     icon,
+    fireball,
     healthbar,
     boss;
     /**
@@ -63,6 +64,7 @@ public class Assets
         snake1 = ImageLoader.loadImage("resources/images/snake1.png");
         snake2 = ImageLoader.loadImage("resources/images/snake2.png");
         boss = ImageLoader.loadImage("resources/images/mrhayes1.jpg");
+        fireball = ImageLoader.loadImage("resources/images/fireball.png");
         cane1 = ImageLoader.loadImage("resources/images/cane.png");
         credits = ImageLoader.loadImage("resources/images/creditscreen.png");
         nostory = ImageLoader.loadImage("resources/images/oopsnostory.png");

@@ -10,21 +10,27 @@ public class BossState extends State
     private OldMan player;
     private Boss MRHAYES;
     public Can can;
+    public Fireball fireball;
+    public boolean firefireball = false;
     public boolean fire = false;
     public boolean canpunch = true;
     public boolean cancane = true;
     public int canpunch1 = 0;
     int count = 0;
     public int cancane1 = 0;
+    int firetimer = 0;
+    float randomNum;
     public BossState(game game)
     {
        super(game);
        player = new OldMan(100,408, game);
        MRHAYES = new Boss(850, 400, game);
        can = new Can(player.getX(),player.getY(),70,30);
+       fireball = new Fireball((float) MRHAYES.hitbox.getX() - 30, (float) MRHAYES.hitbox.getY() + 30,30,28);
     }
     
     public void update(){
+        randomNum = MRHAYES.getY() + (float)(Math.random() * 280);
         if(player.punchbox.intersects(MRHAYES.hitbox))
         {
             if (game.getKeyManager().punch && canpunch){
@@ -51,6 +57,23 @@ public class BossState extends State
         if(can != null && can.getX() >= 1000){
             fire = false;
         }
+        
+        if(firetimer == 120){
+            fireball = new Fireball((float) MRHAYES.hitbox.getX() - 30, randomNum,30,28);
+            firefireball = true;
+            firetimer = 0;
+        }
+        if(fireball != null && fireball.hitbox.intersects(player.hitbox)){
+            firefireball = false;
+            fireball = null;
+            player.hit(2);
+        }
+        if(firefireball && fireball != null && fireball.getX() >= 0){
+            fireball.tick();
+        }
+        if(fireball != null && fireball.getX() <= 0){
+            firefireball = false;
+        }
         player.tick();
         MRHAYES.tick();
         if(!cancane && cancane1 >= (60*3)){
@@ -63,6 +86,7 @@ public class BossState extends State
         }
         cancane1++;
         canpunch1++;
+        firetimer++;
         
     }
     public void render(Graphics g){
@@ -73,6 +97,10 @@ public class BossState extends State
             MRHAYES.render(g);
             if(fire && can.getX() <= 1000){
                 can.render(g);
+            }
+            
+            if(firefireball && fireball.getX() >= 0){
+                fireball.render(g);
             }
         }
         count++;
