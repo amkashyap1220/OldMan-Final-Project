@@ -1,7 +1,5 @@
 #BlueJ class context
-comment0.target=Assets
-comment0.text=\n\ Loads\ the\ images\ to\ be\ used\ in\ the\ game\n\ \n\ @author\ Alexander,\ Maggie,\ and\ Justin\n\ @version\ 1.0.0\n
-comment1.params=
-comment1.target=void\ init()
-comment1.text=\n\ Loads\ all\ of\ the\ images\ (called\ by\ the\ init()\ in\ game)\n
-numComments=2
+comment0.params=
+comment0.target=void\ init()
+comment0.text=\r\n\ Loads\ all\ of\ the\ images\ (called\ by\ the\ init()\ in\ game)\r\n
+numComments=1
