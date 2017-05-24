@@ -71,8 +71,10 @@ public class Game2State extends State
             fire = false;
         }
         player.tick();
-        slime.tick();
-        snake.tick();
+        if(slime.getHealth() >=0){
+        slime.tick();}
+        if(snake.getHealth() >=0){
+        snake.tick();}
         if(!cancane && cancane1 >= (60*3)){
             cancane = true;
             cancane1 = 0;
@@ -90,8 +92,10 @@ public class Game2State extends State
         if(count >=90){
             g.drawImage(Assets.lvl3bg,0,0,null);
             player.render(g);
-            slime.render(g);
-            snake.render(g);
+            if(slime.getHealth() >=0){
+                slime.render(g);}
+                if(snake.getHealth() >=0){
+            snake.render(g);}
             if(fire && can.getX() <= 1000){
                 can.render(g);
             }
