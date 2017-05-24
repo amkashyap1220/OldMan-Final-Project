@@ -5,9 +5,9 @@ all she needs to know. The comments should usually include at least:
 ------------------------------------------------------------------------
 
 PROJECT TITLE:
-PURPOSE OF PROJECT:
-VERSION or DATE:
-DEPENDENCIES:
-HOW TO START THIS PROJECT:
-AUTHORS:
-USER INSTRUCTIONS:
+PURPOSE OF PROJECT: Play the old man game
+VERSION or DATE: 5/24/17
+
+HOW TO START THIS PROJECT: run launcher.java
+AUTHORS: alex, maggie,jsutin
+USER INSTRUCTIONS: wasd jh
