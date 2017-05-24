@@ -9,5 +9,7 @@ PURPOSE OF PROJECT: Play the old man game
 VERSION or DATE: 5/24/17
 
 HOW TO START THIS PROJECT: run launcher.java
+OR
+left click and run oldmanwithaplane.jar
 AUTHORS: alex, maggie,jsutin
 USER INSTRUCTIONS: wasd jh
