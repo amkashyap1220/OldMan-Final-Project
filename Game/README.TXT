@@ -13,3 +13,6 @@ OR
 left click and run oldmanwithaplane.jar
 AUTHORS: alex, maggie,jsutin
 USER INSTRUCTIONS: wasd jh
+
+Tutorial Used:
+http://www.youtube.com/playlist?list=PLah6faXAgguMnTBs3JnEJY0shAc18XYQZ
