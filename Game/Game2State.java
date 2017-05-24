@@ -106,7 +106,7 @@ public class Game2State extends State
         return slime;
     }
     public Snake getSnake(){
-        return null;
+        return snake;
     }
     public OldMan getOldMan(){
         return player;

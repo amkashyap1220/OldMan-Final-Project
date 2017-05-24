@@ -1,5 +1,6 @@
 import java.awt.*;
 import java.awt.event.*;
+
 /**
  * Write a description of class MenuState here.
  * 
@@ -8,6 +9,7 @@ import java.awt.event.*;
  */
 public class MenuState extends State //implements KeyListener
 {
+    public Image i = Assets.titlescreen;
     public Boss getBoss(){
      return null;   
     }
@@ -22,7 +24,12 @@ public class MenuState extends State //implements KeyListener
         
     }
     public void render(Graphics g){
-        g.drawImage(Assets.titlescreen,0,0,null);
+        if(game.getKeyManager().up1){
+            i = Assets.titlescreen;
+        }else if(game.getKeyManager().down1){
+            i = Assets.titlescreen1;
+        }
+        g.drawImage(i,0,0,null);
     }
     public Slime getSlime(){
         return null;

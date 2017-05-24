@@ -125,8 +125,12 @@ public class game implements Runnable
             timeforswap= 0;
         }else if(State.getState() == game1state && game1state.getSnake().getHealth() == 0){
             State.setState(game2state);
-        }else if(State.getState() == game2state && game2state.getSlime().getHealth() == 0 &&game2state.getSnake().getHealth() == 0 ){
-            State.setState(bossstate);
+        }else if(State.getState() == game2state && game2state.getSnake().getHealth() == 0&& game2state.getSlime().getHealth() == 0){
+            
+                    State.setState(bossstate);
+                
+            
+            //State.setState(bossstate);
         }else if(State.getState() == bossstate && bossstate.getBoss().getHealth() == 0){
             State.setState(creditstate);
         }else if(State.getState() ==creditstate&& keyManager.enter){

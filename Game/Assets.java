@@ -27,13 +27,15 @@ public class Assets
     icon,
     fireball,
     healthbar,
-    boss;
+    boss,
+    titlescreen1;
     /**
      * Loads all of the images (called by the init() in game)
      */
     public static void init()
     {
-        titlescreen = ImageLoader.loadImage("resources/images/title.png");
+        titlescreen = ImageLoader.loadImage("resources/images/title1.png");
+        titlescreen1 =ImageLoader.loadImage("resources/images/title2.png");
         loadingscreen = ImageLoader.loadImage("resources/images/loadingscreen.png");
         lvl1_1 = ImageLoader.loadImage("resources/images/lvl1-1.png");
         lvl1_2 = ImageLoader.loadImage("resources/images/lvl1-2.png");
