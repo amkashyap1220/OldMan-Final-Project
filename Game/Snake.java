@@ -49,12 +49,15 @@ public class Snake extends Creature
         }
         count++;
         //health
-        g.drawRect(1000-201,0,201,26);
+        Color black = new Color(255,255,255);
+        g.setColor(black);
+        g.drawRect(1000-201,50,201,26);
         g.setColor(Color.green);
-        g.fillRect(999-200,1,20*getHealth(),25);
-       
+        g.fillRect(999-199,51,20*getHealth()-1,25);
+        g.setColor(black);
+        g.drawString("Snake HP",999-200,51+40+1);
         
-        g.drawRect((int)x+10, (int)y+10, 75,  75);
+        //g.drawRect((int)x+10, (int)y+10, 75,  75);
     }
     
     public void createHitbox(int hitboxX, int hitboxXFar, int hitboxY, int hitboxYFar)

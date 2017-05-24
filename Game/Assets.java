@@ -48,9 +48,9 @@ public class Assets
         flipwalking1 = ImageLoader.loadImage("resources/images/walking1.png");
         flipwalking2 = ImageLoader.loadImage("resources/images/walking2.png");
         throw1 = ImageLoader.loadImage("resources/images/throwanim.png");
-        throw2 = ImageLoader.loadImage("resources/images/throwanim2.png");
+        throw2 = ImageLoader.loadImage("resources/images/flipthrowanim2.png");
         flipthrow1 = ImageLoader.loadImage("resources/images/flipthrowanim.png");
-        flipthrow2 = ImageLoader.loadImage("resources/images/flipthrowanim2.png");
+        flipthrow2 = ImageLoader.loadImage("resources/images/throwanim2.png");
         flipidle1 = ImageLoader.loadImage("resources/images/idleanimflip1.png");
         flipidle2 = ImageLoader.loadImage("resources/images/idleanimflip2.png");
         lvl1bg = ImageLoader.loadImage("resources/images/lvl1bg.png");

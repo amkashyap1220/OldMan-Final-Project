@@ -30,7 +30,7 @@ public class Fireball extends Creature
     {
         
         g.drawImage(Assets.fireball, (int) x, (int) y, width, height, null);
-        g.drawRect((int)x, (int)y,30,28);
+        //g.drawRect((int)x, (int)y,30,28);
     }
     
     

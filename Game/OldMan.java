@@ -20,6 +20,7 @@ public class OldMan extends Creature
     public boolean timeforcane1 = true;
     public int timeforcane = 0;
     public int count2 =0;
+    boolean punching = false;
     public OldMan(float x, float y, game game){
         super(x,y, 167, 250);
         this.game = game;
@@ -49,7 +50,10 @@ public class OldMan extends Creature
            left = false;
            anim = true;
         }
-        
+        if (game.getKeyManager().punch)
+        {
+            punching = true;
+        }   
         if (game.getKeyManager().can && timeforcane1)
         {
            throwing = true;
@@ -91,7 +95,9 @@ public class OldMan extends Creature
         }
         if (count <30 && left){
             if(throwing){
-                g.drawImage(Assets.throw2, (int) x, (int) y, width, height, null);
+                g.drawImage(Assets.throw1, (int) x, (int) y, width, height, null);
+                }else if(punching){
+                    g.drawImage(Assets.throw2, (int) x, (int) y, width, height, null);
             }else{
                 g.drawImage(Assets.idle1, (int) x, (int) y, width, height, null);
             }
@@ -99,7 +105,9 @@ public class OldMan extends Creature
         else if (count <30 && !left)
         {
             if(throwing){
-                g.drawImage(Assets.throw2, (int) x, (int) y, width, height, null);
+                g.drawImage(Assets.throw1, (int) x, (int) y, width, height, null);
+                }else if(punching){
+                    g.drawImage(Assets.flipthrow2, (int) x, (int) y, width, height, null);
             }else{
                 g.drawImage(Assets.flipidle1, (int) x, (int) y, width, height, null);
             }
@@ -111,13 +119,17 @@ public class OldMan extends Creature
             }
             if(anim){
                 if(throwing){
-                    g.drawImage(Assets.throw2, (int) x, (int) y, width, height, null);
+                    g.drawImage(Assets.throw1, (int) x, (int) y, width, height, null);
+                    }else if(punching){
+                    g.drawImage(Assets.flipthrow2, (int) x, (int) y, width, height, null);
                 }else{
                     g.drawImage(Assets.flipwalking2, (int) x, (int) y, width, height, null);
                 }
             }else{
                 if(throwing){
-                    g.drawImage(Assets.throw2, (int) x, (int) y, width, height, null);
+                    g.drawImage(Assets.throw1, (int) x, (int) y, width, height, null);
+                    }else if(punching){
+                    g.drawImage(Assets.flipthrow2, (int) x, (int) y, width, height, null);
                 }else{
                     g.drawImage(Assets.flipidle2, (int) x, (int) y, width, height, null);
                 }
@@ -130,12 +142,17 @@ public class OldMan extends Creature
             
             if(anim){
                 if(throwing){
+                    g.drawImage(Assets.throw1, (int) x, (int) y, width, height, null);
+                }else if(punching){
                     g.drawImage(Assets.throw2, (int) x, (int) y, width, height, null);
-                }else{
+                }
+                else{
                     g.drawImage(Assets.walking2, (int) x, (int) y, width, height, null);
                 }
             }else{
                 if(throwing){
+                    g.drawImage(Assets.throw1, (int) x, (int) y, width, height, null);
+                }else if(punching){
                     g.drawImage(Assets.throw2, (int) x, (int) y, width, height, null);
                 }else{
                     g.drawImage(Assets.idle2, (int) x, (int) y, width, height, null);
@@ -144,17 +161,20 @@ public class OldMan extends Creature
         }
         anim = false;
         throwing = false;
+        punching = false;
         count++;
         //health
-        g.setColor(Color.gray);
+        Color black = new Color(255,255,255);
+        g.setColor(black);
         g.drawRect(0,0,201,26);
         g.setColor(Color.green);
         g.fillRect(1,1,20*getHealth(),25);
-        
+        g.setColor(black);
+        g.drawString("Old Man HP",1,1+26+15);
         //temp
-        g.drawRect((int)x+167,(int)y+110,50,50);
-        g.drawRect((int)x, (int)y+40,167,170);
-        g.drawRect((int)x-50,(int)y+110,50,50);
+        //g.drawRect((int)x+167,(int)y+110,50,50);
+        //g.drawRect((int)x, (int)y+40,167,170);
+        //g.drawRect((int)x-50,(int)y+110,50,50);
     }
     
     public void hit(int damage)

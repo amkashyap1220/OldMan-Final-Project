@@ -30,7 +30,7 @@ public class Can extends Creature
     {
         
         g.drawImage(Assets.cane1, (int) x, (int) y, width, height, null);
-        g.drawRect((int)x, (int)y,70,30);
+        //g.drawRect((int)x, (int)y,70,30);
     }
     
     
